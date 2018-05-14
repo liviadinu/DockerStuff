@@ -1,0 +1,6 @@
+# escape=`
+# using vNext image
+FROM microsoft/dynamics-nav:2017
+
+RUN powershell -Command "mkdir 'C:\\Run\\mvx'"
+COPY mvx "C:\\Run\\mvx"
