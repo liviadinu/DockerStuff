@@ -22,7 +22,8 @@ $StopWatch = New-Object -TypeName System.Diagnostics.Stopwatch
 $StopWatch.Start();
 
 if ($containerName -eq $dbcontainername) {Write-Error "Containers must be named differently. Restart the process and rename these parameters."
-                                          exit   }
+                                          Read-Host
+										  exit   }
 
 if($updatePSModules){
     Install-Module -Name navcontainerhelper
@@ -82,6 +83,7 @@ if($createNewDb) {
                 Write-Host "Error"
                 Write-Host $log
                 throw "Initialization of container $containerName failed"
+				Read-Host
                 exit
             }
       } while (!($log.Contains("VERBOSE: Started SQL Server.")))
@@ -91,6 +93,7 @@ if($createNewDb) {
 if(!$createNewDb) {
   $var = docker ps --format='{{.Names}}' -a --filter "name=$dbcontainername"
   if ($var -eq '') { Write-Error -Message "No such container: $dbcontainername!"
+                     Read-Host
                      exit}
 }
 
@@ -112,7 +115,11 @@ if($nav -eq $hostname){
   Remove-Item -Path "C:\ProgramData\NavContainerHelper\Extensions\$hostname\" -Recurse
 }
 
-new-navcontainer -accept_eula -containername $hostname -imageName $navImageNameTag -auth NavUserPassword -includecside -updateHosts -enableSymbolLoading -licenseFile $licenseFile -doNotExportObjectsToText -Credential $dbcred -accept_outdated -databaseServer $dbcontainername -databaseName $dbname -databaseCredential $dbcred -AdditionalParameters @("--restart unless-stopped") 
+$AddtionalParam = "--restart unless-stopped"
+
+if($gitFolder -neq '') {$AddtionalParam = "--restart unless-stopped -v $gitFolder:c:\GitRepo"}
+
+new-navcontainer -accept_eula -containername $hostname -imageName $navImageNameTag -auth NavUserPassword -includecside -updateHosts -enableSymbolLoading -licenseFile $licenseFile -doNotExportObjectsToText -Credential $dbcred -accept_outdated -databaseServer $dbcontainername -databaseName $dbname -databaseCredential $dbcred -AdditionalParameters @($AddtionalParam) 
 
 if (!$skipLSRetail) {
     $StopWatchLS = New-Object -TypeName System.Diagnostics.Stopwatch 
