@@ -11,7 +11,6 @@
   [string]$dbimage = "",
   [switch]$createNewDb,
   [switch]$updatePSModules,
-  [switch]$skipLSRetail,
   [switch]$skipAdditionalSetups, # Auto-Test Company
   [string]$gitFolder,
   [Int32]$uidOffset,
@@ -112,25 +111,14 @@ $nav = docker ps --format='{{.Names}}' -a --filter "name=$hostname"
 
 if($nav -eq $hostname){
   docker rm $hostname --force
-  Remove-Item -Path "C:\ProgramData\NavContainerHelper\Extensions\$hostname\" -Recurse
+  Remove-Item -Path "C:\ProgramData\NavContainerHelper\Extensions\$hostname\" -Recurse -Force
 }
 
 $AddtionalParam = "--restart unless-stopped"
-
-if($gitFolder -neq '') {$AddtionalParam = "--restart unless-stopped -v $gitFolder:c:\GitRepo"}
+if($gitFolder -ne '') {$AddtionalParam += " --volume $($gitFolder):C:\Run\mvx\Repo"}
 
 new-navcontainer -accept_eula -containername $hostname -imageName $navImageNameTag -auth NavUserPassword -includecside -updateHosts -enableSymbolLoading -licenseFile $licenseFile -doNotExportObjectsToText -Credential $dbcred -accept_outdated -databaseServer $dbcontainername -databaseName $dbname -databaseCredential $dbcred -AdditionalParameters @($AddtionalParam) 
 
-if (!$skipLSRetail) {
-    $StopWatchLS = New-Object -TypeName System.Diagnostics.Stopwatch 
-    $StopWatchLS.Start();
-    docker exec $hostname powershell -command "C:\run\mvx\InstallLSComponents.ps1"
-    Copy-Item "C:\ProgramData\NavContainerHelper\Extensions\$hostname\my\Add-ins" `
-              -Destination "C:\ProgramData\NavContainerHelper\Extensions\$hostname\Program Files\100\RoleTailored Client\Add-ins" -Recurse -Force
-    Remove-Item -Path "C:\ProgramData\NavContainerHelper\Extensions\$hostname\my\Add-ins" -Recurse
-    $StopWatchLS.Stop();
-    Write-Host -ForegroundColor Green "Time to setup LS Retail:" $StopWatchLS.Elapsed.ToString()
-}
 
 if(!$skipAdditionalSetups){
     $StopWatchMV = New-Object -TypeName System.Diagnostics.Stopwatch 
