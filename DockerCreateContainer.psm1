@@ -35,15 +35,8 @@ $dbcred = New-Object System.Management.Automation.PSCredential("sa", $securePass
 $bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePassword)
 $password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr)
 
-if ($navImageNameTag -eq "") {
-    switch($countryCode )
-    {
-     ""   {$navImageNameTag ='mvxregistry/mv-dynamics-nav:latest'}
-     "LT" {$navImageNameTag ='mvxregistry/mv-dynamics-nav:lt-latest'}
-     "LV" {$navImageNameTag ='mvxregistry/mv-dynamics-nav:lv-latest'}
-     "BH" {$navImageNameTag ='mvxregistry/mv-dynamics-nav:bh-latest'}
-    }
- }
+if ($navImageNameTag -eq "") {$navImageNameTag ='mvxregistry/mv-dynamics-nav:latest'}
+
 
 $hostname = $containerName 
 if ($dbimage -eq "") {
@@ -62,7 +55,7 @@ if($createNewDb) {
   $var = docker ps --format='{{.Names}}' -a --filter "name=$dbcontainername"
   if ($var -eq $dbcontainername) { docker rm $dbcontainername --force }
   Write-Host -ForegroundColor Yellow "Creating Database container $dbcontainername..."
-  docker run -d --hostname=$dbcontainername --restart unless-stopped -e locale=nl-NL -e ACCEPT_EULA=Y -e sa_password=$password -v C:/temp/:C:/temp --name $dbcontainername $dbimage
+  docker run -d --hostname=$dbcontainername --restart unless-stopped --memory 4G -e locale=nl-NL -e ACCEPT_EULA=Y -e sa_password=$password -v C:/temp/:C:/temp --name $dbcontainername $dbimage
 
   $prevLog = ""
   Write-Host -ForegroundColor Yellow "Waiting for container $dbcontainername to be ready"
@@ -115,7 +108,7 @@ if($nav -eq $hostname){
 }
 
 $AddtionalParam = "--env locale=nl-NL --restart unless-stopped"
-if($gitFolder -ne '') {$AddtionalParam += " --volume $($gitFolder):C:\Run\Repo"}
+if($gitFolder -ne '') {$AddtionalParam += " --volume $($gitFolder):C:\Run\mvx\Repo"}
 
 new-navcontainer -accept_eula -containername $hostname -imageName $navImageNameTag -auth NavUserPassword -includecside -updateHosts -licenseFile $licenseFile `
 -doNotExportObjectsToText -Credential $dbcred -accept_outdated -databaseServer $dbcontainername -databaseName $dbname -databaseCredential $dbcred `
