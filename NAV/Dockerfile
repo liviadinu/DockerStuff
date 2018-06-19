@@ -1,7 +1,6 @@
 FROM microsoft/dynamics-nav:2017
 
-RUN  mkdir 'C:\\Run\\mvx' ; \
-     mkdir 'C:\\Run\\Repo'
+RUN  mkdir 'C:\\Run\\mvx'
 COPY lsservicecomponents.exe 'C:\\'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 COPY lsclientcomponents.exe 'C:\\'
 COPY lsretail.inf 'C:\\'

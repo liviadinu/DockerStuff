@@ -9,7 +9,7 @@ function Get-NAVIde
 {
     if (!$env:NAVIdePath) 
     {
-        return 'c:\Program Files (x86)\Microsoft Dynamics NAV\100\RoleTailored Client\finsql.exe'
+        return 'c:\Program Files (x86)\Microsoft Dynamics NAV\110\RoleTailored Client\finsql.exe'
     }
     return (Join-Path -Path $env:NAVIdePath -ChildPath 'finsql.exe')
 }
@@ -18,7 +18,7 @@ function Get-NAVIdePath
 {
     if (!$env:NAVIdePath) 
     {
-        return 'c:\Program Files (x86)\Microsoft Dynamics NAV\100\RoleTailored Client'
+        return 'c:\Program Files (x86)\Microsoft Dynamics NAV\110\RoleTailored Client'
     }
     return $env:NAVIdePath
 }
@@ -27,7 +27,7 @@ function Get-NAVAdminPath
 {
     if (!$env:NAVServicePath) 
     {
-        return 'c:\Program Files\Microsoft Dynamics NAV\100\Service'
+        return 'c:\Program Files\Microsoft Dynamics NAV\110\Service'
     }
     return $env:NAVServicePath
 }
