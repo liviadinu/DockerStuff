@@ -14,6 +14,8 @@
   [switch]$skipAdditionalSetups, # Auto-Test Company
   [string]$gitFolder,
   [Int32]$uidOffset,
+  [ValidateSet(2017,2018)]
+  [Int32]$version,
   [ValidateSet('LT','LV','BH')]
   [string]$countryCode=''  
   )
@@ -40,7 +42,7 @@ if ($navImageNameTag -eq "") {$navImageNameTag ='mvxregistry/mv-dynamics-nav:lat
 
 $hostname = $containerName 
 if ($dbimage -eq "") {
-    switch($countryCode ){
+    switch($countryCode){
     ""  {$dbimage = 'mvxregistry/mvxsql:latest'}
     "LT"  {$dbimage = 'mvxregistry/mvxsql:lt.latest'}
     "LV"  {$dbimage = 'mvxregistry/mvxsql:lv.latest'}
@@ -48,6 +50,10 @@ if ($dbimage -eq "") {
     }
 }
 
+if ($version -eq 2018) {
+                    $dbimage += '.2018'
+                    $navImageNameTag += '.2018'
+}
 
 if($createNewDb) {
   $StopWatchDatabase = New-Object -TypeName System.Diagnostics.Stopwatch 
@@ -111,7 +117,7 @@ $AddtionalParam = "--env locale=nl-NL --restart unless-stopped"
 if($gitFolder -ne '') {$AddtionalParam += " --volume $($gitFolder):C:\Run\mvx\Repo"}
 
 new-navcontainer -accept_eula -containername $hostname -imageName $navImageNameTag -auth NavUserPassword -includecside -updateHosts -licenseFile $licenseFile `
--doNotExportObjectsToText -Credential $dbcred -accept_outdated -databaseServer $dbcontainername -databaseName $dbname -databaseCredential $dbcred `
+-doNotExportObjectsToText -enableSymbolLoading -Credential $dbcred -accept_outdated -databaseServer $dbcontainername -databaseName $dbname -databaseCredential $dbcred `
 -AdditionalParameters @($AddtionalParam) 
 
 
