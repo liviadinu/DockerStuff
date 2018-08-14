@@ -5,11 +5,11 @@
   [string]$containerName,
   [Parameter(Mandatory=$true)]
   [string]$dbcontainername,
-  [Parameter(Mandatory=$true)]
-  [string]$licenseFile  = "",
-  [string]$navImageNameTag = "",
+  [ValidateSet('LT','LV','BH','UKR','GR')]
+  [string]$countryCode,
+  [string]$licenseFile,
+  [string]$navImageNameTag,
   [string]$locale,
-  [Parameter(Mandatory=$true)]
   [string]$gitFolder
   )
 $StopWatch = New-Object -TypeName System.Diagnostics.Stopwatch 
@@ -25,54 +25,35 @@ $dbcred = New-Object System.Management.Automation.PSCredential("sa", $securePass
 $bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePassword)
 $password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr)
 
-if ($navImageNameTag -eq "") {$navImageNameTag ='mvxregistry/mv-dynamics-nav:latest'}
+if ($navImageNameTag -eq "") {
+  $navImageNameTag ='mvxregistry/mv-dynamics-nav:latest'
+  switch($countryCode){
+		"" { $navImageNameTag += '.2018' }
+		"UKR" { $navImageNameTag += '.2018' }
+		"GR" { $navImageNameTag += '.2018' }
+		}
+}
 
 $hostname = $containerName 
 if ($locale -eq "") {$locale = "nl-NL"}
 
 $sRawString = Get-Content "$PSScriptRoot\Setups.ini" | Out-String
 $sStringToConvert = $sRawString -replace '\\', '\\'
-$Settings = convertfrom-stringdata $sStringToConvert                                                   
-$licenseFile = $Settings.licenseFile 
+$Settings = convertfrom-stringdata $sStringToConvert  
 
-  $StopWatchDatabase = New-Object -TypeName System.Diagnostics.Stopwatch 
-  $StopWatchDatabase.Start();
-  $var = docker ps --format='{{.Names}}' -a --filter "name=$dbcontainername"
-  if ($var -eq $dbcontainername) { docker rm $dbcontainername --force }
-  Write-Host -ForegroundColor Yellow "Creating Database container $dbcontainername..."
-  docker run -d --hostname=$dbcontainername --restart unless-stopped --memory 4G -e locale=$locale -e ACCEPT_EULA=Y -e sa_password=$password -v C:/temp/:C:/temp --name $dbcontainername $dbimage
+if($licenseFile -eq ""){$licenseFile = $Settings.licenseFile -replace '"', '' }                                                 
 
-  $prevLog = ""
-  Write-Host -ForegroundColor Yellow "Waiting for container $dbcontainername to be ready"
-  $cnt = $timeout
-  $log = ""
-  do {
-      Start-Sleep -Seconds 1
-      $logs = docker logs $dbcontainername
-      if ($logs) { $log = [string]::Join("`r`n",$logs) }
-      $newLog = $log.subString($prevLog.Length)
-      $prevLog = $log
-      if ($newLog -ne "") {
-                $cnt = $timeout
-                Write-Host -NoNewline $newLog 
-                }
-      if ($cnt-- -eq 0 -or $log.Contains("Msg")) { 
-                Write-Host "Error"
-                Write-Host $log
-                throw "Initialization of container $containerName failed"
-				Read-Host
-                exit
-            }
-      } while (!($log.Contains("VERBOSE: Started SQL Server.")))
-        Write-Host  
-
+$StopWatchDatabase = New-Object -TypeName System.Diagnostics.Stopwatch 
+$StopWatchDatabase.Start();
+$var = docker ps --format='{{.Names}}' -a --filter "name=$dbcontainername"
 
 $dbNamePattern = '(DATABASE) +\[(.*?)\]'
 $logs = docker logs $dbcontainername
 $dbname = [regex]::Match($logs,$dbNamePattern).Groups[2].Value 
 
+$hostname = $containerName 
 docker logs $dbcontainername
-
+$hostname = $containerName 
 $nav = docker ps --format='{{.Names}}' -a --filter "name=$hostname"
 
 if($nav -eq $hostname){

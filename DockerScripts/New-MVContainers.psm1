@@ -5,16 +5,16 @@
   [string]$containerName,
   [ValidateSet('LT','LV','BH','UKR','GR')]
   [string]$countryCode,
+  [string]$licenseFile,
   [string]$navImageNameTag = "",
   [string]$dbimage = "",
-  [switch]$skipAdditionalSetups, # Auto-Test Company
   [string]$gitFolder,
   [string]$dblocale  
   )
 $StopWatch = New-Object -TypeName System.Diagnostics.Stopwatch 
 $StopWatch.Start();
 
-$dbcontainername = $containerName + "-db"
+$dbcontainername = $containerName + '-db'
 
 if ($countryCode -eq ""){$gitFolderCode = "MVX"} 
 else { $gitFolderCode = $countryCode }
@@ -28,7 +28,7 @@ if ($gitFolder -eq "")
    $gitFolder = $Settings.gitFolder -replace '\$', $gitFolderCode
  }
 $uidOffset = $Settings.uidOffset
-$licenseFile = $Settings.licenseFile 
+if($licenseFile -eq ""){$licenseFile = $Settings.licenseFile -replace '"', '' } 
 
 $timeout = 1800
 $securePassword = Read-Host -Prompt "Enter 'sa' password" -AsSecureString
@@ -36,13 +36,19 @@ $dbcred = New-Object System.Management.Automation.PSCredential("sa", $securePass
 $bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePassword)
 $password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr)
 
-if ($navImageNameTag -eq "") {$navImageNameTag ='mvxregistry/mv-dynamics-nav:latest'}
+if ($navImageNameTag -eq "") {
+  $navImageNameTag ='mvxregistry/mv-dynamics-nav:latest'
+  switch($countryCode){
+		"" { $navImageNameTag += '.2018' }
+		"UKR" { $navImageNameTag += '.2018' }
+		"GR" { $navImageNameTag += '.2018' }
+		}
+}
 
 $hostname = $containerName 
 if ($dbimage -eq "") {
     switch($countryCode){
     ""    {$dbimage = 'mvxregistry/mvxsql:latest'
-	       $navImageNameTag += '.2018'
 		   $locale = "nl-NL"}
     "LT"  {$dbimage = 'mvxregistry/mvxsql:lt.latest'
 	       $locale = "lt-LT"}
@@ -50,11 +56,9 @@ if ($dbimage -eq "") {
 	       $locale = "lv-LV"}
     "BH"  {$dbimage = 'mvxregistry/mvxsql:bh.latest'
 	       $locale = "ar-BH"}
-	"GR"  {$dbimage = 'mvxregistry/mvxsql:gr.latest'
-	       $navImageNameTag += '.2018'   
+	"GR"  {$dbimage = 'mvxregistry/mvxsql:gr.latest'  
 		   $locale = "gr-GR"}
-	"UKR" {$dbimage = 'mvxregistry/mvxsql:ukr.latest'
-	       $navImageNameTag += '.2018'  
+	"UKR" {$dbimage = 'mvxregistry/mvxsql:ukr.latest' 
 	       $locale = "uk-UK"}
     }
 }
@@ -98,11 +102,8 @@ $logs = docker logs $dbcontainername
 $dbname = [regex]::Match($logs,$dbNamePattern).Groups[2].Value 
 
 docker logs $dbcontainername
-
-if($createNewDb){
 $StopWatchDatabase.Stop();
 Write-Host -ForegroundColor Green "Time to setup database:" $StopWatchDatabase.Elapsed.ToString()
-}
 
 $nav = docker ps --format='{{.Names}}' -a --filter "name=$hostname"
 
