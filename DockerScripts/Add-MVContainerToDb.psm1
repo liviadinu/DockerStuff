@@ -1,4 +1,4 @@
-﻿function Add-MvContainerToDb {
+﻿function Add-MVContainerToDb {
 
   Param(
   [Parameter(Mandatory=$true)]
@@ -10,7 +10,7 @@
   [string]$navImageNameTag = "",
   [string]$locale,
   [Parameter(Mandatory=$true)]
-  [string]$gitFolder,
+  [string]$gitFolder
   )
 $StopWatch = New-Object -TypeName System.Diagnostics.Stopwatch 
 $StopWatch.Start();
@@ -65,7 +65,8 @@ $licenseFile = $Settings.licenseFile
             }
       } while (!($log.Contains("VERBOSE: Started SQL Server.")))
         Write-Host  
-}
+
+
 $dbNamePattern = '(DATABASE) +\[(.*?)\]'
 $logs = docker logs $dbcontainername
 $dbname = [regex]::Match($logs,$dbNamePattern).Groups[2].Value 
@@ -92,4 +93,4 @@ Write-Host -ForegroundColor Green "Finished. Total time for setup:" $StopWatch.E
 
 }
 
-Export-ModuleMember Add-MvContainerToDb
+Export-ModuleMember Add-MVContainerToDb

@@ -1,14 +1,14 @@
-﻿function New-MvDevContainer {
+﻿function New-MVContainers {
 
   Param(
   [Parameter(Mandatory=$true)]
   [string]$containerName,
+  [ValidateSet('LT','LV','BH','UKR','GR')]
+  [string]$countryCode,
   [string]$navImageNameTag = "",
   [string]$dbimage = "",
   [switch]$skipAdditionalSetups, # Auto-Test Company
   [string]$gitFolder,
-  [ValidateSet('LT','LV','BH','UKR','GR')]
-  [string]$countryCode,
   [string]$dblocale  
   )
 $StopWatch = New-Object -TypeName System.Diagnostics.Stopwatch 
