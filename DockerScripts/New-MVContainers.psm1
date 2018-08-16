@@ -2,7 +2,7 @@
 
   Param(
   [Parameter(Mandatory=$true)]
-  [string]$containerName,
+  [string]$devEnvName,
   [ValidateSet('LT','LV','BH','UKR','GR')]
   [string]$countryCode,
   [string]$licenseFile,
@@ -14,6 +14,7 @@
 $StopWatch = New-Object -TypeName System.Diagnostics.Stopwatch 
 $StopWatch.Start();
 
+$containerName = $devEnvName
 $dbcontainername = $containerName + '-db'
 
 if ($countryCode -eq ""){$gitFolderCode = "MVX"} 
@@ -24,7 +25,6 @@ $sStringToConvert = $sRawString -replace '\\', '\\'
 $Settings = convertfrom-stringdata $sStringToConvert                                                   
 if ($gitFolder -eq "")
  {
-
    $gitFolder = $Settings.gitFolder -replace '\$', $gitFolderCode
  }
 $uidOffset = $Settings.uidOffset
@@ -70,7 +70,7 @@ $StopWatchDatabase.Start();
 $var = docker ps --format='{{.Names}}' -a --filter "name=$dbcontainername"
 if ($var -eq $dbcontainername) { docker rm $dbcontainername --force }
 Write-Host -ForegroundColor Yellow "Creating Database container $dbcontainername..."
-docker run -d --hostname=$dbcontainername --restart unless-stopped --memory 4G -e locale=$locale -e ACCEPT_EULA=Y -e sa_password=$password -v C:/temp/:C:/temp --name $dbcontainername $dbimage
+docker run -d --hostname=$dbcontainername --memory 4G -e locale=$locale -e ACCEPT_EULA=Y -e sa_password=$password -v C:/temp/:C:/temp --name $dbcontainername $dbimage
 
 $prevLog = ""
 Write-Host -ForegroundColor Yellow "Waiting for container $dbcontainername to be ready"
@@ -105,12 +105,14 @@ docker logs $dbcontainername
 $StopWatchDatabase.Stop();
 Write-Host -ForegroundColor Green "Time to setup database:" $StopWatchDatabase.Elapsed.ToString()
 
-$nav = docker ps --format='{{.Names}}' -a --filter "name=$hostname"
-
-if($nav -eq $hostname){
-  docker rm $hostname --force
-  Remove-Item -Path "C:\ProgramData\NavContainerHelper\Extensions\$hostname\" -Recurse -Force
+$nav = docker ps --format='{{.Names}}' -a --filter "name=$containerName"
+if($nav -eq $containerName){
+  docker rm $containerName --force
+    Remove-Item -Path "C:\ProgramData\NavContainerHelper\Extensions\$hostname\" -Recurse -Force
 }
+
+#$mvxpath = "C:\ProgramData\NavContainerHelper\Extensions\$hostname\"
+#[bool]$pathExista = [System.IO.File]::Exists($mvxpath)
 
 $AddtionalParam = "--env locale=nl-NL --restart unless-stopped"
 if($gitFolder -ne '') {$AddtionalParam += " --volume $($gitFolder):C:\Run\mvx\Repo"}

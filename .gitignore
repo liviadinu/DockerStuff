@@ -517,3 +517,612 @@ Scripts2017/Update-NAVTxtFromApplication2015.ps1
 SQL/MVXdevelop2018_1_Data.ndf
 SQL/MVXdevelop2018_Data.mdf
 SQL/MVXdevelop2018_Log.ldf
+DockerScripts/DockerCreateContainer.psm1
+NAV 2017 images/NAV/2017/lsclientcomponents.exe
+NAV 2017 images/NAV/2017/lsservicecomponents.exe
+NAV 2017 images/NAV/DD/DDConfigClient.dll
+NAV 2017 images/NAV/DD/LSRetail.DD.Common.Data.dll
+NAV 2017 images/NAV/DD/LSRetail.DD.Common.dll
+NAV 2017 images/NAV/DD/TransAutomClient.dll
+NAV 2017 images/NAV/Dockerfile
+NAV 2017 images/NAV/lsclientcomponents.exe
+NAV 2017 images/NAV/lsretail.inf
+NAV 2017 images/NAV/lsservicecomponents.exe
+NAV 2017 images/NAV/resources/client.inf
+NAV 2017 images/NAV/resources/DDConfigClient.dll
+NAV 2017 images/NAV/resources/LS Nav 11.03.00.704 Client Components.exe
+NAV 2017 images/NAV/resources/LS Nav 11.03.00.704 Service Components.exe
+NAV 2017 images/NAV/resources/LSRetail.DD.Common.Data.dll
+NAV 2017 images/NAV/resources/LSRetail.DD.Common.dll
+NAV 2017 images/NAV/resources/service.inf
+NAV 2017 images/NAV/resources/TransAutomClient.dll
+NAV 2017 images/Scripts2017/CommonPSFunctions/CommonPSFunctions.psd1
+NAV 2017 images/Scripts2017/CommonPSFunctions/CommonPSFunctions.psm1
+NAV 2017 images/Scripts2017/CommonPSFunctions/New-SymLink.ps1
+NAV 2017 images/Scripts2017/Compile-NAVTxt2Fob.ps1
+NAV 2017 images/Scripts2017/Export-NAVPermissionSets.ps1
+NAV 2017 images/Scripts2017/Export-NAVProfileCaptionML.ps1
+NAV 2017 images/Scripts2017/Fix-NAVProfileTriggerNames.ps1
+NAV 2017 images/Scripts2017/Get-NAVCumulativeUpdate.ps1
+NAV 2017 images/Scripts2017/Get-NAVGITSetup.ps1
+NAV 2017 images/Scripts2017/Import-NAVPermissionSets.ps1
+NAV 2017 images/Scripts2017/Install-Modules.ps1
+NAV 2017 images/Scripts2017/Merge-NAVGIT.ps1
+NAV 2017 images/Scripts2017/NVR_GitScripts/Commit-GitRepository.ps1
+NAV 2017 images/Scripts2017/NVR_GitScripts/Get-GitBranch.ps1
+NAV 2017 images/Scripts2017/NVR_GitScripts/loader.psm1
+NAV 2017 images/Scripts2017/NVR_GitScripts/NVR_GitScripts.psd1
+NAV 2017 images/Scripts2017/NVR_GitScripts/Update-GitRepository.ps1
+NAV 2017 images/Scripts2017/NVR_NAVScripts/Compile-NAVTxt2Fob.ps1
+NAV 2017 images/Scripts2017/NVR_NAVScripts/Expand-NAVCumulativeUpdateFile.ps1
+NAV 2017 images/Scripts2017/NVR_NAVScripts/Export-NAVProfileCaptionML.ps1
+NAV 2017 images/Scripts2017/NVR_NAVScripts/Fix-NAVProfileTriggerNames.ps1
+NAV 2017 images/Scripts2017/NVR_NAVScripts/Get-NAVCumulativeUpdateFile.ps1
+NAV 2017 images/Scripts2017/NVR_NAVScripts/Get-NAVGITSetup.ps1
+NAV 2017 images/Scripts2017/NVR_NAVScripts/Merge-NAVGIT.ps1
+NAV 2017 images/Scripts2017/NVR_NAVScripts/MSNAV80_CustomFunctions.ps1
+NAV 2017 images/Scripts2017/NVR_NAVScripts/NVR_NAVScripts.psd1
+NAV 2017 images/Scripts2017/NVR_NAVScripts/NVR_NAVScripts.psm1
+NAV 2017 images/Scripts2017/NVR_NAVScripts/Publish-NAVObject.ps1
+NAV 2017 images/Scripts2017/NVR_NAVScripts/Sync-NAVDbWithRepo.ps1
+NAV 2017 images/Scripts2017/NVR_NAVScripts/Test-NAVDatabase.ps1
+NAV 2017 images/Scripts2017/NVR_NAVScripts/Translate-NAVProfileCaptionML.ps1
+NAV 2017 images/Scripts2017/NVR_NAVScripts/Update-NAVApplicationFromTxt.ps1
+NAV 2017 images/Scripts2017/NVR_NAVScripts/Update-NAVServiceVersion.ps1
+NAV 2017 images/Scripts2017/NVR_NAVScripts/Update-NAVTxtFromApplication.ps1
+NAV 2017 images/Scripts2017/NVR_NAVScripts/Upgrade-NAVService.ps1
+NAV 2017 images/Scripts2017/PSFunctions_NAVPermissions/PSFunctions_NAVPermissions.psm1
+NAV 2017 images/Scripts2017/TFSBuild/Compile-NAVObjectsOnServer.ps1
+NAV 2017 images/Scripts2017/TFSBuild/Compile-NAVObjectsOnServerRunner.ps1
+NAV 2017 images/Scripts2017/TFSBuild/Export-NAVObjectsAsFOB.ps1
+NAV 2017 images/Scripts2017/TFSBuild/Get-LastBuildFile.ps1
+NAV 2017 images/Scripts2017/TFSBuild/Import-TxtFiles.ps1
+NAV 2017 images/Scripts2017/TFSBuild/Import-TxtFilesAll.ps1
+NAV 2017 images/Scripts2017/TFSBuild/New-NAVServer.ps1
+NAV 2017 images/Scripts2017/TFSBuild/Remove-NAVServer.ps1
+NAV 2017 images/Scripts2017/TFSBuild/Run-NAVTest.ps1
+NAV 2017 images/Scripts2017/TFSBuild2015/Compile-NAVObjectsOnServer.ps1
+NAV 2017 images/Scripts2017/TFSBuild2015/Compile-NAVObjectsOnServerRunner.ps1
+NAV 2017 images/Scripts2017/TFSBuild2015/Export-NAVObjectsAsFOB.ps1
+NAV 2017 images/Scripts2017/TFSBuild2015/Get-LastBuildFile.ps1
+NAV 2017 images/Scripts2017/TFSBuild2015/Import-TxtFiles.ps1
+NAV 2017 images/Scripts2017/TFSBuild2015/Import-TxtFilesAll.ps1
+NAV 2017 images/Scripts2017/TFSBuild2015/New-NAVServer.ps1
+NAV 2017 images/Scripts2017/TFSBuild2015/Remove-NAVServer.ps1
+NAV 2017 images/Scripts2017/TFSBuild2015/Run-NAVTest.ps1
+NAV 2017 images/Scripts2017/TFSBuild2015/Sync-TxtFiles.ps1
+NAV 2017 images/Scripts2017/Translate-NAVProfileCaptionML.ps1
+NAV 2017 images/Scripts2017/Untitled1.ps1
+NAV 2017 images/Scripts2017/Update-NAVApplicationFromTxt.ps1
+NAV 2017 images/Scripts2017/Update-NAVTxtFromApplication.ps1
+NAV 2017 images/Scripts2017/Update-NAVTxtFromApplication2015.ps1
+NAV 2017 images/SQL/Dockerfile
+NAV 2017 images/SQL/MVXdevelop2018_1_Data.ndf
+NAV 2017 images/SQL/MVXdevelop2018_Data.mdf
+NAV 2017 images/SQL/MVXdevelop2018_Log.ldf
+NAV 2018 images/mvx/AdditionalMvComponents.ps1
+NAV 2018 images/mvx/ChangeUidOffset.ps1
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/AzureKeyVaultClient/Microsoft.Dynamics.Nav.AzureKeyVaultClient.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/AzureMLWrapper/Microsoft.Dynamics.Nav.AzureMLWrapper.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/BusinessChart/Microsoft.Dynamics.Nav.Client.BusinessChart.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/BusinessChart/Microsoft.Dynamics.Nav.Client.BusinessChart.dll.config
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/BusinessChart/Microsoft.Dynamics.Nav.Client.BusinessChart.Model.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/BusinessChart/Microsoft.Dynamics.Nav.Client.BusinessChart.zip
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/ClientExtensions/Microsoft.Dynamics.Nav.ClientExtensions.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/CodeViewer/Microsoft.Dynamics.Nav.Client.CodeViewerTypes.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/cs-CZ/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/da-DK/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/de-AT/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/de-CH/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/de-DE/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/en-AU/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/en-CA/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/en-GB/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/en-NZ/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/en-US/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/es-ES/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/es-MX/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/fi-FI/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/fr-BE/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/fr-CA/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/fr-CH/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/fr-FR/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/is-IS/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/it-CH/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/it-IT/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/nb-NO/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/nl-BE/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/nl-NL/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/ru-RU/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Connect/sv-SE/Microsoft.Dynamics.Nav.Client.DynamicsOnlineConnect.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/CRMCustomization/DynamicsNAVIntegrationSolution.zip
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/CRMCustomization/Microsoft.Dynamics.Nav.CrmCustomizationHelper.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/CRMCustomization/Microsoft.IdentityModel.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Digipoort/Microsoft.Dynamics.NL.Digipoortservice.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/DocumentReport/Microsoft.Dynamics.Nav.DocumentReport.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/DocumentReport/Microsoft.Dynamics.Nav.Types.Report.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/ElectronicInvoice/Microsoft.Dynamics.Nav.MX.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Elster/Microsoft.Dynamics.ElsterTransferHandler.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Elster/Microsoft.Dynamics.ElsterTransferHandler.dll.config
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/ExcelReport/Microsoft.Dynamics.NAV.RU.ExcelReportBuilder.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/FlowIntegration/Microsoft.Dynamics.Nav.Client.FlowIntegration.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/FlowIntegration/Microsoft.Dynamics.Nav.Client.FlowIntegration.zip
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/GraphClient/Microsoft.Azure.ActiveDirectory.GraphClient.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/GraphClient/Microsoft.Dynamics.Nav.AzureADGraphClient.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/DD/DDConfigClient.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/DD/LSRetail.DD.Common.Data.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/DD/LSRetail.DD.Common.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/DD/TransAutomClient.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/Facebook/Facebook.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/Facebook/LICENSE.txt
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/Facebook/NOTICE.txt
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/Hammock/Hammock.ClientProfile.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/Hammock/LICENSE.txt
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/LSRecommend/Hyak.Common.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/LSRecommend/LSRecommend.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/LSRecommend/LSRecommends.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/LSRecommend/Microsoft.Azure.Common.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/LSRecommend/Microsoft.Azure.KeyVault.Core.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/LSRecommend/Microsoft.Data.Edm.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/LSRecommend/Microsoft.Data.OData.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/LSRecommend/Microsoft.Data.Services.Client.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/LSRecommend/Microsoft.Rest.ClientRuntime.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/LSRecommend/Microsoft.WindowsAzure.Storage.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/LSRecommend/NLog.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/LSRecommend/System.Spatial.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/Lucene.Net/LICENSE.txt
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/Lucene.Net/Lucene.Net.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/Lucene.Net/NOTICE.txt
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/Newtonsoft.Json/LICENSE.txt
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/Newtonsoft.Json/Newtonsoft.Json.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/AvaTaxLib.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/AxInterop.WMPLib.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/FacebookApi.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/Interop.WMPLib.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/Ionic.Zip.Reduced.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/IonicZip_LICENSE.txt
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSBrowserAddIn.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSBrowserAddIn80.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSDataSet.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSDemoEFTAddIn.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSDemoEFTAddIn80.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSDemoEFTClient.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSDeviceManager.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSFileLog.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSHtmlEditorAddIn.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSHtmlEditorAddIn80.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSNavForecourtInterface.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSOposControls.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSOposPrinterClient.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSRetail.Forecourt.Interface.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSRetail.NAV.Omni.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSRetail.NAV.Search.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSRetail.NAV.Social.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSRetail.NAV.Web.AddIn.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSRetail.NAV.Web.Controls.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSSysInfo.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSTools.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSVirtualDevices.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSVirtualStationClient.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSWCFClient.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/LSWebServiceClient.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/Microsoft.Web.Infrastructure.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/Newtonsoft.Json.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/POSAddIn.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/PosAddIn80.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/POSControls.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/POSInterfaces.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/PrintingStationClient.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/PrintingStationUtils.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/System.Web.Razor.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/System.Web.WebPages.Deployment.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/System.Web.WebPages.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/POS/WcfSamples.DynamicProxy.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/TweetSharp/LICENSE.txt
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/LSRetail/TweetSharp/TweetSharp.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Messages/Microsoft.Dynamics.Nav.Messages.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Microsoft.Dynamics.Framework.UI.Extensibility.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/NavEtwReceiver/Microsoft.Diagnostics.Tracing.TraceEvent.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/NavEtwReceiver/Microsoft.Dynamics.Nav.EtwListener.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/NavEwsWrapper/Microsoft.Dynamics.Nav.Common.Exchange.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/NavEwsWrapper/Microsoft.Dynamics.Nav.EwsWrapper.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/NavEwsWrapper/Microsoft.Exchange.WebServices.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/OAuthHelper/Microsoft.Dynamics.Nav.OAuth.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/OAuthIntegration/Microsoft.Dynamics.Nav.Client.OAuthIntegration.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/OAuthIntegration/Microsoft.Dynamics.Nav.Client.OAuthIntegration.zip
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/ObjectPicker/Microsoft.Dynamics.Nav.Management.DSObjectPickerWrapper.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Office/Microsoft.Dynamics.NAV.Integration.Office.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Office/Microsoft.Dynamics.Platform.Integration.Office.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/OLSync/Customization.xml
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/OLSync/Microsoft.Dynamics.NAV.OLSync.Common.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/OLSync/Microsoft.Dynamics.NAV.OLSync.OLSyncSupplier.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/OLSync/Microsoft.Dynamics.NAV.OLSync.OLSyncSupplier.dll.config
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/OLSync/MSOUTL.OLB
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/OpenXml/Microsoft.Dynamics.Nav.OpenXml.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/PageReady/Microsoft.Dynamics.Nav.Client.PageReady.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/PageReady/Microsoft.Dynamics.Nav.Client.PageReady.zip
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/PdfWriter/Microsoft.Dynamics.Nav.PdfWriter.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/PermissionTestHelper/Microsoft.Dynamics.Nav.PermissionTestHelper.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/PingPong/Microsoft.Dynamics.Nav.Client.PingPong.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/PowerShellRunner/Microsoft.Dynamics.Nav.PowerShellRunner.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/SMTP/Microsoft.Dynamics.Nav.SMTP.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/SocialListening/Microsoft.Dynamics.Nav.Client.SocialListening.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/SocialListening/Microsoft.Dynamics.Nav.Client.SocialListening.zip
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/cs-CZ/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/cs-CZ/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/da-DK/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/da-DK/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/de-AT/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/de-AT/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/de-CH/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/de-CH/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/de-DE/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/de-DE/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/en-AU/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/en-AU/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/en-CA/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/en-CA/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/en-GB/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/en-GB/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/en-NZ/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/en-NZ/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/en-US/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/en-US/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/es-ES/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/es-ES/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/es-MX/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/es-MX/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/fi-FI/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/fi-FI/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/fr-BE/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/fr-BE/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/fr-CA/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/fr-CA/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/fr-CH/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/fr-CH/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/fr-FR/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/fr-FR/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/is-IS/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/is-IS/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/it-CH/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/it-CH/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/it-IT/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/it-IT/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/Microsoft.Dynamics.Nav.Client.TimelineVisualization.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/nb-NO/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/nb-NO/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/nl-BE/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/nl-BE/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/nl-NL/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/nl-NL/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/ru-RU/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/ru-RU/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/sv-SE/Microsoft.Dynamics.Framework.UI.WinForms.DataVisualization.Timeline.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timeline/sv-SE/Microsoft.Dynamics.Nav.Client.TimelineVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/Timer/Microsoft.Dynamics.Nav.Timer.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/UserAccount/Microsoft.Dynamics.Nav.NavUserAccount.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/VideoPlayer/Microsoft.Dynamics.Nav.Client.VideoPlayer.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/VideoPlayer/Microsoft.Dynamics.Nav.Client.VideoPlayer.zip
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/WebPageViewer/Microsoft.Dynamics.Nav.Client.WebPageViewer.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerAddins/WebPageViewer/Microsoft.Dynamics.Nav.Client.WebPageViewer.zip
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Bond.Attributes.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Bond.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Bond.IO.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Bond.Reflection.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/hlink.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Hyak.Common.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/IfxEvents.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/IfxEvents_x86.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/IfxHealth.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/IfxHealth_x86.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/IfxMetrics.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/IfxMetrics_x86.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.ApplicationInsights.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.AspNet.SignalR.Core.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Azure.ActiveDirectory.GraphClient.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Azure.Common.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Azure.Common.NetFramework.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Azure.KeyVault.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Cloud.InstrumentationFramework.Events.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Cloud.InstrumentationFramework.Metrics.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.CodeAnalysis.CSharp.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.CodeAnalysis.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Crm.Sdk.Proxy.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Data.Edm.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Data.OData.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Data.Services.Client.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Data.Services.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Diagnostics.Tracing.EventSource.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Framework.UI.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Framework.UI.Extensibility.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Framework.UI.Navigation.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Framework.UI.UX2006.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Framework.UI.Windows.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Apps.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Apps.Management.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Apps.Management.psd1
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Apps.Navxcop.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Client.Builder.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Client.ServiceConnection.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Client.TestPageClient.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Client.UI.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Client.WinForms.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.CodeAnalysis.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Common.Exchange.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.DocumentService.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.DocumentService.Types.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.DotNetBridge.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Ifx.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Language.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Management.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Management.psd1
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Management.psm1
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Model.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Model.Parser.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Model.Tools.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Model.TypeSystem.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Ncl.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Ncl.etw.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.OpenXml.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Service.Api.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Service.Dev.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Service.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Service.OData.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Service.OData.V4.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Service.ODataService.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Service.ODataServiceProvider.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Service.WebMetadata.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Service.WebServices.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.SharePointOnlineDocumentService.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Types.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Types.etw.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Types.Report.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Dynamics.Nav.Watson.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Exchange.WebServices.Auth.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Exchange.WebServices.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Extensions.DependencyInjection.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.IdentityModel.Extensions.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.IdentityModel.Logging.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.IdentityModel.Protocol.Extensions.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.IdentityModel.Protocols.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.IdentityModel.S2S.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.IdentityModel.Tokens.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.IO.RecyclableMemoryStream.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.OData.Core.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.OData.Edm.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Owin.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Owin.Host.HttpListener.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Owin.Hosting.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Owin.Security.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.ReportViewer.Common.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.ReportViewer.Common.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.ReportViewer.DataVisualization.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.ReportViewer.DataVisualization.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.ReportViewer.Design.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.ReportViewer.Design.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.ReportViewer.ProcessingObjectModel.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.ReportViewer.WebDesign.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.ReportViewer.WebDesign.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.ReportViewer.WebForms.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.ReportViewer.WebForms.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.ReportViewer.WinForms.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.ReportViewer.WinForms.resources.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.ServiceBus.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Spatial.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.SqlServer.Types.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Threading.Tasks.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Threading.Tasks.Extensions.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.WindowsAzure.Storage.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Xrm.Sdk.Deployment.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Xrm.Sdk.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Microsoft.Xrm.Tooling.Connector.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/msvcp120.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/msvcr120.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/NavAdminTool.ps1
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/navlic.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/NAVWebClientManagement.psm1
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/ndbcs.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Newtonsoft.Json.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Owin.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/System.Collections.Immutable.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/System.IdentityModel.Tokens.Jwt.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/System.Net.Http.Extensions.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/System.Net.Http.Formatting.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/System.Net.Http.Primitives.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/System.Reflection.Metadata.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/System.Spatial.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/System.Web.Http.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/System.Web.Http.Owin.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/System.Web.OData.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Tfx.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/Tfx_x86.dll
+NAV 2018 images/mvx/DynamicsNAV2018ServerDLL/vccorlib120.dll
+NAV 2018 images/mvx/Scripts2018/CommonPSFunctions/CommonPSFunctions.psd1
+NAV 2018 images/mvx/Scripts2018/CommonPSFunctions/CommonPSFunctions.psm1
+NAV 2018 images/mvx/Scripts2018/CommonPSFunctions/New-SymLink.ps1
+NAV 2018 images/mvx/Scripts2018/Compile-NAVTxt2Fob.ps1
+NAV 2018 images/mvx/Scripts2018/Export-NAVProfileCaptionML.ps1
+NAV 2018 images/mvx/Scripts2018/Fix-NAVProfileTriggerNames.ps1
+NAV 2018 images/mvx/Scripts2018/Get-NAVCumulativeUpdate.ps1
+NAV 2018 images/mvx/Scripts2018/Get-NAVGITSetup.ps1
+NAV 2018 images/mvx/Scripts2018/Install-Modules.ps1
+NAV 2018 images/mvx/Scripts2018/Merge-NAVGIT.ps1
+NAV 2018 images/mvx/Scripts2018/NVR_GitScripts/Commit-GitRepository.ps1
+NAV 2018 images/mvx/Scripts2018/NVR_GitScripts/Get-GitBranch.ps1
+NAV 2018 images/mvx/Scripts2018/NVR_GitScripts/loader.psm1
+NAV 2018 images/mvx/Scripts2018/NVR_GitScripts/NVR_GitScripts.psd1
+NAV 2018 images/mvx/Scripts2018/NVR_GitScripts/Update-GitRepository.ps1
+NAV 2018 images/mvx/Scripts2018/NVR_NAVScripts/Compile-NAVTxt2Fob.ps1
+NAV 2018 images/mvx/Scripts2018/NVR_NAVScripts/Expand-NAVCumulativeUpdateFile.ps1
+NAV 2018 images/mvx/Scripts2018/NVR_NAVScripts/Export-NAVProfileCaptionML.ps1
+NAV 2018 images/mvx/Scripts2018/NVR_NAVScripts/Fix-NAVProfileTriggerNames.ps1
+NAV 2018 images/mvx/Scripts2018/NVR_NAVScripts/Get-NAVCumulativeUpdateFile.ps1
+NAV 2018 images/mvx/Scripts2018/NVR_NAVScripts/Get-NAVGITSetup.ps1
+NAV 2018 images/mvx/Scripts2018/NVR_NAVScripts/Merge-NAVGIT.ps1
+NAV 2018 images/mvx/Scripts2018/NVR_NAVScripts/MSNAV80_CustomFunctions.ps1
+NAV 2018 images/mvx/Scripts2018/NVR_NAVScripts/NVR_NAVScripts.psd1
+NAV 2018 images/mvx/Scripts2018/NVR_NAVScripts/NVR_NAVScripts.psm1
+NAV 2018 images/mvx/Scripts2018/NVR_NAVScripts/Publish-NAVObject.ps1
+NAV 2018 images/mvx/Scripts2018/NVR_NAVScripts/Sync-NAVDbWithRepo.ps1
+NAV 2018 images/mvx/Scripts2018/NVR_NAVScripts/Test-NAVDatabase.ps1
+NAV 2018 images/mvx/Scripts2018/NVR_NAVScripts/Translate-NAVProfileCaptionML.ps1
+NAV 2018 images/mvx/Scripts2018/NVR_NAVScripts/Update-NAVApplicationFromTxt.ps1
+NAV 2018 images/mvx/Scripts2018/NVR_NAVScripts/Update-NAVServiceVersion.ps1
+NAV 2018 images/mvx/Scripts2018/NVR_NAVScripts/Update-NAVTxtFromApplication.ps1
+NAV 2018 images/mvx/Scripts2018/NVR_NAVScripts/Upgrade-NAVService.ps1
+NAV 2018 images/mvx/Scripts2018/TFSBuild/Compile-NAVObjectsOnServer.ps1
+NAV 2018 images/mvx/Scripts2018/TFSBuild/Compile-NAVObjectsOnServerRunner.ps1
+NAV 2018 images/mvx/Scripts2018/TFSBuild/Export-NAVObjectsAsFOB.ps1
+NAV 2018 images/mvx/Scripts2018/TFSBuild/Get-LastBuildFile.ps1
+NAV 2018 images/mvx/Scripts2018/TFSBuild/Import-TxtFiles.ps1
+NAV 2018 images/mvx/Scripts2018/TFSBuild/Import-TxtFilesAll.ps1
+NAV 2018 images/mvx/Scripts2018/TFSBuild/New-NAVServer.ps1
+NAV 2018 images/mvx/Scripts2018/TFSBuild/Remove-NAVServer.ps1
+NAV 2018 images/mvx/Scripts2018/TFSBuild/Run-NAVTest.ps1
+NAV 2018 images/mvx/Scripts2018/TFSBuild2015/Compile-NAVObjectsOnServer.ps1
+NAV 2018 images/mvx/Scripts2018/TFSBuild2015/Compile-NAVObjectsOnServerRunner.ps1
+NAV 2018 images/mvx/Scripts2018/TFSBuild2015/Export-NAVObjectsAsFOB.ps1
+NAV 2018 images/mvx/Scripts2018/TFSBuild2015/Get-LastBuildFile.ps1
+NAV 2018 images/mvx/Scripts2018/TFSBuild2015/Import-TxtFiles.ps1
+NAV 2018 images/mvx/Scripts2018/TFSBuild2015/Import-TxtFilesAll.ps1
+NAV 2018 images/mvx/Scripts2018/TFSBuild2015/New-NAVServer.ps1
+NAV 2018 images/mvx/Scripts2018/TFSBuild2015/Remove-NAVServer.ps1
+NAV 2018 images/mvx/Scripts2018/TFSBuild2015/Run-NAVTest.ps1
+NAV 2018 images/mvx/Scripts2018/TFSBuild2015/Sync-TxtFiles.ps1
+NAV 2018 images/mvx/Scripts2018/Translate-NAVProfileCaptionML.ps1
+NAV 2018 images/mvx/Scripts2018/Update-NAVApplicationFromTxt.ps1
+NAV 2018 images/mvx/Scripts2018/Update-NAVTxtFromApplication.ps1
+NAV 2018 images/mvx/Scripts2018/Update-NAVTxtFromApplication2015.ps1
+NAV 2018 images/SQL/Dockerfile
+NAV 2018 images/SQL/MVXdevelop2018_1_Data.ndf
+NAV 2018 images/SQL/MVXdevelop2018_Data.mdf
+NAV 2018 images/SQL/MVXdevelop2018_Log.ldf
+NAV/Dockerfile
+NAV/mvx/AdditionalMvComponents.ps1
+NAV/mvx/ChangeUidOffset.ps1
+NAV/mvx/Scripts2018/CommonPSFunctions/CommonPSFunctions.psd1
+NAV/mvx/Scripts2018/CommonPSFunctions/CommonPSFunctions.psm1
+NAV/mvx/Scripts2018/CommonPSFunctions/New-SymLink.ps1
+NAV/mvx/Scripts2018/Compile-NAVTxt2Fob.ps1
+NAV/mvx/Scripts2018/Export-NAVProfileCaptionML.ps1
+NAV/mvx/Scripts2018/Fix-NAVProfileTriggerNames.ps1
+NAV/mvx/Scripts2018/Get-NAVCumulativeUpdate.ps1
+NAV/mvx/Scripts2018/Get-NAVGITSetup.ps1
+NAV/mvx/Scripts2018/Install-Modules.ps1
+NAV/mvx/Scripts2018/Merge-NAVGIT.ps1
+NAV/mvx/Scripts2018/NVR_GitScripts/Commit-GitRepository.ps1
+NAV/mvx/Scripts2018/NVR_GitScripts/Get-GitBranch.ps1
+NAV/mvx/Scripts2018/NVR_GitScripts/loader.psm1
+NAV/mvx/Scripts2018/NVR_GitScripts/NVR_GitScripts.psd1
+NAV/mvx/Scripts2018/NVR_GitScripts/Update-GitRepository.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Compile-NAVTxt2Fob.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Expand-NAVCumulativeUpdateFile.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Export-NAVProfileCaptionML.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Fix-NAVProfileTriggerNames.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Get-NAVCumulativeUpdateFile.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Get-NAVGITSetup.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Merge-NAVGIT.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/MSNAV80_CustomFunctions.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/NVR_NAVScripts.psd1
+NAV/mvx/Scripts2018/NVR_NAVScripts/NVR_NAVScripts.psm1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Publish-NAVObject.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Sync-NAVDbWithRepo.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Test-NAVDatabase.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Translate-NAVProfileCaptionML.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Update-NAVApplicationFromTxt.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Update-NAVServiceVersion.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Update-NAVTxtFromApplication.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Upgrade-NAVService.ps1
+NAV/mvx/Scripts2018/TFSBuild/Compile-NAVObjectsOnServer.ps1
+NAV/mvx/Scripts2018/TFSBuild/Compile-NAVObjectsOnServerRunner.ps1
+NAV/mvx/Scripts2018/TFSBuild/Export-NAVObjectsAsFOB.ps1
+NAV/mvx/Scripts2018/TFSBuild/Get-LastBuildFile.ps1
+NAV/mvx/Scripts2018/TFSBuild/Import-TxtFiles.ps1
+NAV/mvx/Scripts2018/TFSBuild/Import-TxtFilesAll.ps1
+NAV/mvx/Scripts2018/TFSBuild/New-NAVServer.ps1
+NAV/mvx/Scripts2018/TFSBuild/Remove-NAVServer.ps1
+NAV/mvx/Scripts2018/TFSBuild/Run-NAVTest.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/Compile-NAVObjectsOnServer.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/Compile-NAVObjectsOnServerRunner.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/Export-NAVObjectsAsFOB.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/Get-LastBuildFile.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/Import-TxtFiles.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/Import-TxtFilesAll.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/New-NAVServer.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/Remove-NAVServer.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/Run-NAVTest.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/Sync-TxtFiles.ps1
+NAV/mvx/Scripts2018/Translate-NAVProfileCaptionML.ps1
+NAV/mvx/Scripts2018/Update-NAVApplicationFromTxt.ps1
+NAV/mvx/Scripts2018/Update-NAVTxtFromApplication.ps1
+NAV/mvx/Scripts2018/Update-NAVTxtFromApplication2015.ps1
+SQL/Dockerfile
+Update-NavContainerFromGit.psm1
+NAV/Dockerfile
+NAV/mvx/AdditionalMvComponents.ps1
+NAV/mvx/ChangeUidOffset.ps1
+NAV/mvx/Scripts2018/CommonPSFunctions/CommonPSFunctions.psd1
+NAV/mvx/Scripts2018/CommonPSFunctions/CommonPSFunctions.psm1
+NAV/mvx/Scripts2018/CommonPSFunctions/New-SymLink.ps1
+NAV/mvx/Scripts2018/Compile-NAVTxt2Fob.ps1
+NAV/mvx/Scripts2018/Export-NAVProfileCaptionML.ps1
+NAV/mvx/Scripts2018/Fix-NAVProfileTriggerNames.ps1
+NAV/mvx/Scripts2018/Get-NAVCumulativeUpdate.ps1
+NAV/mvx/Scripts2018/Get-NAVGITSetup.ps1
+NAV/mvx/Scripts2018/Install-Modules.ps1
+NAV/mvx/Scripts2018/Merge-NAVGIT.ps1
+NAV/mvx/Scripts2018/NVR_GitScripts/Commit-GitRepository.ps1
+NAV/mvx/Scripts2018/NVR_GitScripts/Get-GitBranch.ps1
+NAV/mvx/Scripts2018/NVR_GitScripts/loader.psm1
+NAV/mvx/Scripts2018/NVR_GitScripts/NVR_GitScripts.psd1
+NAV/mvx/Scripts2018/NVR_GitScripts/Update-GitRepository.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Compile-NAVTxt2Fob.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Expand-NAVCumulativeUpdateFile.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Export-NAVProfileCaptionML.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Fix-NAVProfileTriggerNames.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Get-NAVCumulativeUpdateFile.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Get-NAVGITSetup.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Merge-NAVGIT.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/MSNAV80_CustomFunctions.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/NVR_NAVScripts.psd1
+NAV/mvx/Scripts2018/NVR_NAVScripts/NVR_NAVScripts.psm1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Publish-NAVObject.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Sync-NAVDbWithRepo.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Test-NAVDatabase.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Translate-NAVProfileCaptionML.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Update-NAVApplicationFromTxt.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Update-NAVServiceVersion.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Update-NAVTxtFromApplication.ps1
+NAV/mvx/Scripts2018/NVR_NAVScripts/Upgrade-NAVService.ps1
+NAV/mvx/Scripts2018/TFSBuild/Compile-NAVObjectsOnServer.ps1
+NAV/mvx/Scripts2018/TFSBuild/Compile-NAVObjectsOnServerRunner.ps1
+NAV/mvx/Scripts2018/TFSBuild/Export-NAVObjectsAsFOB.ps1
+NAV/mvx/Scripts2018/TFSBuild/Get-LastBuildFile.ps1
+NAV/mvx/Scripts2018/TFSBuild/Import-TxtFiles.ps1
+NAV/mvx/Scripts2018/TFSBuild/Import-TxtFilesAll.ps1
+NAV/mvx/Scripts2018/TFSBuild/New-NAVServer.ps1
+NAV/mvx/Scripts2018/TFSBuild/Remove-NAVServer.ps1
+NAV/mvx/Scripts2018/TFSBuild/Run-NAVTest.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/Compile-NAVObjectsOnServer.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/Compile-NAVObjectsOnServerRunner.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/Export-NAVObjectsAsFOB.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/Get-LastBuildFile.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/Import-TxtFiles.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/Import-TxtFilesAll.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/New-NAVServer.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/Remove-NAVServer.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/Run-NAVTest.ps1
+NAV/mvx/Scripts2018/TFSBuild2015/Sync-TxtFiles.ps1
+NAV/mvx/Scripts2018/Translate-NAVProfileCaptionML.ps1
+NAV/mvx/Scripts2018/Update-NAVApplicationFromTxt.ps1
+NAV/mvx/Scripts2018/Update-NAVTxtFromApplication.ps1
+NAV/mvx/Scripts2018/Update-NAVTxtFromApplication2015.ps1
+SQL/Dockerfile
+Update-NavContainerFromGit.psm1
