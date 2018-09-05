@@ -72,7 +72,11 @@ param (
 
     #Skip manual check
     [Parameter(ValueFromPipelinebyPropertyName = $True)]
-    [switch] $SkipManual
+    [switch] $SkipManual,
+	
+	#Db password
+	[Parameter(ValueFromPipelinebyPropertyName = $True)]
+	[string] $Password = ''
 )
 
 Begin {
@@ -104,14 +108,14 @@ Process {
 
         Write-Progress -Activity 'Importing TXT Files...'
         #Import-NAVApplicationObjectFiles -Files $FileName -Server $Server -Database $Database -LogFolder $LogFolder -NavIde $NavIde
-        . $PSScriptRoot\Update-NAVApplicationFromTxt.ps1 -Files $FileName -Server $Server -Database $Database -Compile -SkipDeleteCheck
+        . $PSScriptRoot\Update-NAVApplicationFromTxt.ps1 -Files $FileName -Server $Server -Database $Database  -Password $Password -Compile -SkipDeleteCheck
         Write-Verbose -Message 'TXT Objects imported'
 
         Write-Progress -Activity 'Compiling System objects...'
-        Compile-NAVApplicationObject -Server $Server -Database $Database -Filter 'Type=Table;Id=2000000000..' -LogFolder $LogFolder -NavIde $NavIde
+        Compile-NAVApplicationObject -Server $Server -Database $Database -Username 'sa' -Password $Password -Filter 'Type=Table;Id=2000000000..' -LogFolder $LogFolder -NavIde $NavIde
         Write-Verbose -Message 'System Objects compiled'
         Write-Progress -Activity 'Compiling objects...'
-        Compile-NAVApplicationObjectFilesMulti -Files $FileName -Server $Server -Database $Database -NavIde $NavIde -AsJob
+        Compile-NAVApplicationObjectFilesMulti -Files $FileName -Server $Server -Database $Database -Password $Password -NavIde $NavIde -AsJob
         Write-Verbose -Message 'Objects compiled'
 
         $ScriptEndTime = Get-Date

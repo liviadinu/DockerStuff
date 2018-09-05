@@ -216,7 +216,7 @@ function Merge-NAVObjectVersionList
     $ProgressPreference = 'SilentlyContinue'
     $modifiedproperty = Get-NAVApplicationObjectProperty -Source $modifiedfilename 
     $sourceproperty = Get-NAVApplicationObjectProperty -Source $targetfilename
-    #$targetproperty = Get-NAVApplicationObjectProperty -Source $resultfilename;
+    #$targetproperty= Get-NAVApplicationObjectProperty -Source $resultfilename;
 
     $targetversionlist = Merge-NAVVersionListString -source $sourceproperty.VersionList -target $modifiedproperty.VersionList -mode SourceFirst -newversion $newversion
     #Write-Host 'Updating version list on '$filename' from '$sourceversionlist' and '$modifiedversionlist' to '$targetversionlist
@@ -233,6 +233,10 @@ function Get-NAVDatabaseObjects
 
         [String]
         $sourcedb,
+		
+		[String]
+        $Password,		
+		 
 
         [String]
         $sourcefilefolder,
@@ -244,7 +248,7 @@ function Get-NAVDatabaseObjects
     ClearFolder($sourcefilefolder)
     $NavIde = $sourceclientfolder+'\finsql.exe'
     Write-Host 'Exporting Objects from '$sourceserver'\'$sourcedb'...'
-    $exportresult = Export-NAVApplicationObject -Server $sourceserver -Database $sourcedb -path $sourcefilefolder'.txt'
+    $exportresult = Export-NAVApplicationObject -Server $sourceserver -Database $sourcedb -Username 'sa' -Password $Password -path $sourcefilefolder'.txt'
     Write-Host -Object 'Splitting Objects...'
     $splitresult = Split-NAVApplicationObjectFile -Source $sourcefilefolder'.txt' -Destination $sourcefilefolder -Force
     Remove-Item -Path $sourcefilefolder'.txt'
@@ -257,16 +261,18 @@ function Import-NAVApplicationObjectFiles
         [String]$files,
         [String]$Server,
         [String]$Database,
+		[String]$Password,
         [String]$LogFolder,
         [String]$NavIde = '',
-        [String]$ClientFolder = ''
+        [String]$ClientFolder = '',
+		[String]$auth = "no"
     )
     if ($NavIde -eq '') 
     {
         $NavIde = Get-NAVIde
     }
-
-    $finsqlparams = "command=importobjects,servername=$Server,database=$Database,file="
+    
+    $finsqlparams = "command=importobjects,servername=$Server,database=$Database,username=sa,password=$Password,ntauthentication=$auth,file="
 
     $TextFiles = Get-ChildItem -Path "$files"
     $i = 0
@@ -289,7 +295,7 @@ function Import-NAVApplicationObjectFiles
         }
         #Write-Debug $Command
 
-        $params = "Command=ImportObjects`,File=`"$TextFile`"`,ServerName=$Server`,Database=`"$Database`"`,LogFile=`"$LogFile`"`,importaction=`"overwrite`""
+        $params = "Command=ImportObjects`,File=`"$TextFile`"`,ServerName=$Server`,Database=`"$Database`"`,Username=`"sa`"`,Password=`"$Password`"`,LogFile=`"$LogFile`"`,ntauthentication=`"no`",importaction=`"overwrite`""
         & $NavIde $params | Write-Output
         #cmd /c $importfinsqlcommand
 
@@ -323,6 +329,7 @@ function Compile-NAVApplicationObjectFiles
         [String]$files,
         [String]$Server,
         [String]$Database,
+		[String]$Password,
         [String]$LogFolder,
         [String]$NavIde = '',
         [String]$ClientFolder = ''
@@ -359,7 +366,7 @@ function Compile-NAVApplicationObjectFiles
         $Type = $FileProperty.ObjectType
         $Id = $FileProperty.Id
         $Filter = "Type=$Type;Id=$Id"
-        $params = "Command=CompileObjects`,Filter=`"$Filter`"`,ServerName=$Server`,Database=`"$Database`"`,LogFile=`"$LogFile`""
+        $params = "Command=CompileObjects`,Filter=`"$Filter`"`,ServerName=$Server`,Database=`"$Database`"`,Username=`"sa`"`,Password=`"$Password`"`,ntauthentication=`"no`",LogFile=`"$LogFile`""
         & $NavIde $params | Write-Output
         #cmd /c $importfinsqlcommand
 
@@ -390,6 +397,8 @@ function Compile-NAVApplicationObjectFilesMulti
         [String]$Server,
         [Parameter(Mandatory = $true,ValueFromPipelinebyPropertyName = $true)]
         [String]$Database,
+		[Parameter(Mandatory = $true,ValueFromPipelinebyPropertyName = $true)]
+        [String]$Password,
         [Parameter(ValueFromPipelinebyPropertyName = $true)]
         [String]$NavIde = '',
         [Parameter(ValueFromPipelinebyPropertyName = $true)]
@@ -440,12 +449,12 @@ function Compile-NAVApplicationObjectFilesMulti
         if ($AsJob -eq $true) 
         {
             Write-Host -Object "Compiling $Filter as Job..."
-            $jobs += Compile-NAVApplicationObject2 -DatabaseName $Database -DatabaseServer $Server -Filter $Filter -Recompile -AsJob -SynchronizeSchemaChanges $SynchronizeSchemaChanges -NavServerName $NavServerName -NavServerInstance $NavServerInstance
+            $jobs += Compile-NAVApplicationObject -DatabaseName $Database -DatabaseServer $Server -Username 'sa' -Password $Password -Filter $Filter -Recompile -AsJob -SynchronizeSchemaChanges $SynchronizeSchemaChanges -NavServerName $NavServerName -NavServerInstance $NavServerInstance
         }
         else 
         {
             Write-Host -Object "Compiling $Filter..."
-            Compile-NAVApplicationObject2 -DatabaseName $Database -DatabaseServer $Server -Filter $Filter -Recompile -SynchronizeSchemaChanges $SynchronizeSchemaChanges -NavServerName $NavServerName -NavServerInstance $NavServerInstance
+            Compile-NAVApplicationObject -DatabaseName $Database -DatabaseServer $Server -Username 'sa' -Password $Password -Filter $Filter -Recompile -SynchronizeSchemaChanges $SynchronizeSchemaChanges -NavServerName $NavServerName -NavServerInstance $NavServerInstance
         }
     }
     if ($AsJob -eq $true) 
@@ -463,6 +472,8 @@ function Compile-NAVApplicationObject
         [String]$Server,
         [Parameter(Mandatory = $true,ValueFromPipelinebyPropertyName = $true)]
         [String]$Database,
+		[Parameter(Mandatory = $true,ValueFromPipelinebyPropertyName = $true)]
+        [String]$Password,
         [Parameter(ValueFromPipelinebyPropertyName = $true)]
         [String]$LogFolder,
         [Parameter(ValueFromPipelinebyPropertyName = $true)]
@@ -481,7 +492,7 @@ function Compile-NAVApplicationObject
     $LogFile = "$LogFolder\filtercompile.log"
     #Write-Progress -Activity 'Compiling objects...' 
     #Write-Debug $Command
-    $params = "Command=CompileObjects`,Filter=`"$Filter`"`,ServerName=$Server`,Database=`"$Database`"`,LogFile=`"$LogFile`""
+    $params = "Command=CompileObjects`,Filter=`"$Filter`"`,ServerName=$Server`,Database=`"$Database`"`,Username=`"sa`"`,Password=`"$Password`"`,ntauthentication=`"no`",LogFile=`"$LogFile`""
     & $NavIde $params | Write-Output
 
     if (Test-Path -Path "$LogFolder\navcommandresult.txt")
@@ -509,6 +520,8 @@ function Compile-NAVApplicationObjectMulti
         [String]$Server,
         [Parameter(Mandatory = $true,ValueFromPipelinebyPropertyName = $true)]
         [String]$Database,
+		[Parameter(Mandatory = $true,ValueFromPipelinebyPropertyName = $true)]
+        [String]$Password,
         [Parameter(ValueFromPipelinebyPropertyName = $true)]
         [String]$LogFolder,
         [Parameter(ValueFromPipelinebyPropertyName = $true)]
@@ -538,7 +551,7 @@ function Compile-NAVApplicationObjectMulti
     $i = 0
     $jobs = @()
 
-    $ObjectProperty = Get-SQLCommandResult -Server $Server -Database $Database -Command "Select Type,ID from Object where Type > '1' order by ID"
+    $ObjectProperty = Get-SQLCommandResult -Server $Server -Database $Database -Username 'sa' -Password $Password -Command "Select Type,ID from Object where Type > '1' order by ID"
     $CountOfObjects = $ObjectProperty.Count
     $Ranges = @()
     $Step = $CountOfObjects/($CPUs-1)
@@ -570,12 +583,12 @@ function Compile-NAVApplicationObjectMulti
         if ($AsJob -eq $true) 
         {
             Write-Host -Object "Compiling $Filter as Job..."
-            $jobs += Compile-NAVApplicationObject2 -DatabaseName $Database -DatabaseServer $Server -LogPath $LogFile -Filter $Filter -Recompile -AsJob -SynchronizeSchemaChanges $SynchronizeSchemaChanges -NavServerName $NavServerName -NavServerInstance $NavServerInstance
+            $jobs += Compile-NAVApplicationObject -DatabaseName $Database -DatabaseServer $Server -Username 'sa' -Password $Password -LogPath $LogFile -Filter $Filter -Recompile -AsJob -SynchronizeSchemaChanges $SynchronizeSchemaChanges -NavServerName $NavServerName -NavServerInstance $NavServerInstance
         }
         else 
         {
             Write-Host -Object "Compiling $Filter..."
-            Compile-NAVApplicationObject2 -DatabaseName $Database -DatabaseServer $Server -LogPath $LogFile -Filter $Filter -Recompile -SynchronizeSchemaChanges $SynchronizeSchemaChanges -NavServerName $NavServerName -NavServerInstance $NavServerInstance
+            Compile-NAVApplicationObject -DatabaseName $Database -DatabaseServer $Server -Username 'sa' -Password $Password -LogPath $LogFile -Filter $Filter -Recompile -SynchronizeSchemaChanges $SynchronizeSchemaChanges -NavServerName $NavServerName -NavServerInstance $NavServerInstance
         }
     }
     if ($AsJob -eq $true) 
@@ -621,6 +634,8 @@ function Export-NAVApplicationObject
         [String]$Server,
         [Parameter(Mandatory = $true,ValueFromPipelinebyPropertyName = $true)]
         [String]$Database,
+		[Parameter(Mandatory = $true,ValueFromPipelinebyPropertyName = $true)]
+        [String]$Password,
         [Parameter(Mandatory = $true,ValueFromPipelinebyPropertyName = $true)]
         [String]$LogFolder,
         [Parameter(ValueFromPipelinebyPropertyName = $true)]
@@ -647,7 +662,7 @@ function Export-NAVApplicationObject
     #Write-Debug $Command
     $LogFile = (Join-Path -Path $LogFolder -ChildPath naverrorlog.txt)
 
-    $params = "Command=ExportObjects`,Filter=`"$Filter`"`,ServerName=$Server`,Database=`"$Database`"`,LogFile=`"$LogFile`"`,File=`"$path`""
+    $params = "Command=ExportObjects`,Filter=`"$Filter`"`,ServerName=$Server`,Database=`"$Database`"`,Username=`"sa`"`,Password=`"$Password`"`,ntauthentication=`"no`",LogFile=`"$LogFile`"`,File=`"$path`""
     if ($NavServerName -gt '') {
       $params = $params+@"
 `,NavServerName="$NavServerName"`,NavServerInstance="$NavServerInstance"`"
@@ -714,6 +729,9 @@ function Merge-NAVDatabaseObjects
 
         [String]
         $targetdb,
+		
+		[String]
+		$Password,
 
         [String]
         $targetfilefolder,
@@ -799,9 +817,9 @@ function Merge-NAVDatabaseObjects
     if ($targetserver) 
     {
         Write-Host -Object 'Importing Objects...'
-        Import-NAVApplicationObject2 -Path $targetfilefolder'.txt' -DatabaseServer $targetserver -DatabaseName $targetdb -Confirm
+        Import-NAVApplicationObject -Path $targetfilefolder'.txt' -DatabaseServer $targetserver -DatabaseName $targetdb -Username 'sa' -Password $Password -Confirm
         Write-Host -Object 'Compiling Objects...'
-        $compileoutput = Compile-NAVApplicationObject2 -DatabaseServer $targetserver -DatabaseName $targetdb -Recompile
+        $compileoutput = Compile-NAVApplicationObject -DatabaseServer $targetserver -DatabaseName $targetdb -Username 'sa' -Password $Password -Recompile
     }
     #return $mergeresult
 }

@@ -19,6 +19,9 @@ function Update-NAVTxtFromApplication
         #SQL Database to update
         [Parameter(Mandatory = $true,ValueFromPipelinebyPropertyName = $true)]
         [String]$Database,
+		#SQL Password
+        [Parameter(Mandatory = $true,ValueFromPipelinebyPropertyName = $true)]
+        [String]$Password,
         #If set, all objects will be updated instead just different
         [Parameter(ValueFromPipelinebyPropertyName = $true)]
         [switch]$All,
@@ -48,7 +51,7 @@ function Update-NAVTxtFromApplication
             $FileObjectsHash.Add("$($FileObject.ObjectType)-$($FileObject.Id)",$FileObject)
         }
 
-        $NAVObjects = Get-SQLCommandResult -Server $Server -Database $Database -Command 'select [Type],[ID],[Version List],[Modified],[Name],[Date],[Time] from Object where [Type]>0'
+        $NAVObjects = Get-SQLCommandResult -Server $Server -Database $Database -Password $Password -Command 'select [Type],[ID],[Version List],[Modified],[Name],[Date],[Time] from Object where [Type]>0'
         $NAVObjectsHash = $null
         $NAVObjectsHash = @{}
         $i = 0
@@ -133,7 +136,7 @@ function Update-NAVTxtFromApplication
         {
             Write-Progress -Status "Exporting all of $count" -Activity 'Exporting objects...' -CurrentOperation $updateobject.Filter -PercentComplete ($i / $count*100) -SecondsRemaining $remtime
             Write-Host -Object 'Exporting all files...'
-            Export-NAVApplicationObject -Filter 'Compiled=0|1' -Server $Server -Database $Database -LogFolder 'LOG' -path (Join-Path -Path $Path -ChildPath 'all.txt') -NavIde (Get-NAVIde)
+            Export-NAVApplicationObject -Filter 'Compiled=0|1' -Server $Server -Database $Database -Username 'sa' -Password $Password -LogFolder 'LOG' -path (Join-Path -Path $Path -ChildPath 'all.txt') -NavIde (Get-NAVIde)
             Split-NAVApplicationObjectFile -Source (Join-Path -Path $Path -ChildPath 'all.txt') -Destination $Path -Force
             Remove-Item (Join-Path -Path $Path -ChildPath 'all.txt')
             Write-Host -Object ''
@@ -151,7 +154,7 @@ function Update-NAVTxtFromApplication
 
                 Write-Progress -Status "Exporting $i of $count" -Activity 'Exporting objects...' -CurrentOperation $updateobject.Filter -PercentComplete ($i / $count*100) -SecondsRemaining $remtime
                 Write-Host -Object "Exporting $($updateobject.Filter)..."
-                Export-NAVApplicationObject -Filter $updateobject.Filter -Server $Server -Database $Database -LogFolder 'LOG' -path $updateobject.TargetFileName -NavIde (Get-NAVIde)
+                Export-NAVApplicationObject -Filter $updateobject.Filter -Server $Server -Database $Database -Username 'sa' -Password $Password -LogFolder 'LOG' -path $updateobject.TargetFileName -NavIde (Get-NAVIde)
             }
 
             Write-Host -Object ''

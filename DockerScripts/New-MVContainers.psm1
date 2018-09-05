@@ -111,8 +111,6 @@ if($nav -eq $containerName){
     Remove-Item -Path "C:\ProgramData\NavContainerHelper\Extensions\$hostname\" -Recurse -Force
 }
 
-#$mvxpath = "C:\ProgramData\NavContainerHelper\Extensions\$hostname\"
-#[bool]$pathExista = [System.IO.File]::Exists($mvxpath)
 
 $AddtionalParam = "--env locale=nl-NL --restart unless-stopped"
 if($gitFolder -ne '') {$AddtionalParam += " --volume $($gitFolder):C:\Run\mvx\Repo"}
@@ -125,7 +123,6 @@ new-navcontainer -accept_eula -containername $hostname -imageName $navImageNameT
 $StopWatchMV = New-Object -TypeName System.Diagnostics.Stopwatch 
 $StopWatchMV.Start();
 docker exec $hostname powershell -command "C:\run\mvx\AdditionalMvComponents.ps1"
-
 docker exec $hostname powershell -command "C:\run\mvx\ChangeUidOffset.ps1 -UidOffSet $uidOffset -pass $password -DatabaseServer $dbcontainername -DatabaseName $dbname"
 $StopWatchMV.Stop();
 Write-Host -ForegroundColor Green "Time to setup addtional components:" $StopWatchMV.Elapsed.ToString()

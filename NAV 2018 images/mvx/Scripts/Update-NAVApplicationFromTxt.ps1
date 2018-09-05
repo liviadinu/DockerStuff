@@ -18,6 +18,9 @@ param (
     #SQL Database to update
     [Parameter(Mandatory = $true,ValueFromPipelinebyPropertyName = $true)]
     [String]$Database,
+	#SQL Database password
+    [Parameter(Mandatory = $true,ValueFromPipelinebyPropertyName = $true)]
+    [String]$Password,
     #If set, all objects will be updated and compiled instead just different
     [Parameter(ValueFromPipelinebyPropertyName = $true)]
     [switch]$All,
@@ -48,13 +51,13 @@ Begin {
         if (($Object.Type -eq 1) -and ($Object.ID -gt 2000000004))
         {
             if ($Object.ID -eq 2000000006) {
-                NVR_NAVScripts\Compile-NAVApplicationObjectMulti -Filter "Type=$($Object.Type);Id=$($Object.ID)" -Server $Server -Database $Database -NavIde (Get-NAVIde) -SynchronizeSchemaChanges No
+                NVR_NAVScripts\Compile-NAVApplicationObjectMulti -Filter "Type=$($Object.Type);Id=$($Object.ID)" -Server $Server -Database $Database -Password $Password -NavIde (Get-NAVIde) -SynchronizeSchemaChanges No
             } else {
-                NVR_NAVScripts\Compile-NAVApplicationObjectMulti -Filter "Type=$($Object.Type);Id=$($Object.ID)" -Server $Server -Database $Database -NavIde (Get-NAVIde) -SynchronizeSchemaChanges Force
+                NVR_NAVScripts\Compile-NAVApplicationObjectMulti -Filter "Type=$($Object.Type);Id=$($Object.ID)" -Server $Server -Database $Database -Password $Password -NavIde (Get-NAVIde) -SynchronizeSchemaChanges Force
             }
         }
         if ($Object.Type -eq 7) { #menusuite
-            NVR_NAVScripts\Compile-NAVApplicationObjectMulti -Filter "Type=$($Object.Type);Id=$($Object.ID)" -Server $Server -Database $Database -NavIde (Get-NAVIde) -SynchronizeSchemaChanges Force
+            NVR_NAVScripts\Compile-NAVApplicationObjectMulti -Filter "Type=$($Object.Type);Id=$($Object.ID)" -Server $Server -Database $Database -Password $Password -NavIde (Get-NAVIde) -SynchronizeSchemaChanges Force
         }
     }
 
@@ -104,7 +107,7 @@ Process{
         $Type = Get-NAVObjectTypeIdFromName -TypeName $FileObject.ObjectType
         $Id = $FileObject.Id
         $FileObjectsHash.Add("$Type-$Id",$true)
-        $NAVObject = Get-SQLCommandResult -Server $Server -Database $Database -Command "select [Type],[ID],[Version List],[Modified],[Name],[Date],[Time] from Object where [Type]=$Type and [ID]=$Id"
+        $NAVObject = Get-SQLCommandResult -Server $Server -Database $Database -Password $Password -Command "select [Type],[ID],[Version List],[Modified],[Name],[Date],[Time] from Object where [Type]=$Type and [ID]=$Id"
         #$NAVObject = $NAVObjects | ? (($_.Type -eq $Type) -and ($_.Id -eq $FileObject.Id))
         if (($FileObject.Modified -eq $NAVObject.Modified) -and
             ($FileObject.VersionList -eq $NAVObject.'Version List') -and
@@ -148,7 +151,7 @@ Process{
     $count = $UpdatedObjects.Count
     if (!$SkipDeleteCheck) 
     {
-        $NAVObjects = Get-SQLCommandResult -Server $Server -Database $Database -Command 'select [Type],[ID],[Version List],[Modified],[Name],[Date],[Time] from Object where [Type]>0'
+        $NAVObjects = Get-SQLCommandResult -Server $Server -Database $Database -Password $Password -Command 'select [Type],[ID],[Version List],[Modified],[Name],[Date],[Time] from Object where [Type]>0'
         $i = 0
         $count = $NAVObjects.Count
         $StartTime = Get-Date
@@ -178,7 +181,7 @@ Process{
                 Write-Warning -Message "$Type $($NAVObject.ID) Should be removed from the database!"
                 if ($MarkToDelete) 
                 {
-                    $Result = Get-SQLCommandResult -Server $Server -Database $Database -Command "update Object set [Version List] = '#DELETE', [Name]='#DELETED $($NAVObject.Type):$($NAVObject.ID)' where [Type]=$($NAVObject.Type) and [ID]=$($NAVObject.ID)"
+                    $Result = Get-SQLCommandResult -Server $Server -Database $Database -Password $Password -Command "update Object set [Version List] = '#DELETE', [Name]='#DELETED $($NAVObject.Type):$($NAVObject.ID)' where [Type]=$($NAVObject.Type) and [ID]=$($NAVObject.ID)"
                 }
             }
         }
@@ -209,7 +212,7 @@ Process{
             Write-Host -Object "Menusuite with ID < 1050 skipped... (Id=$($ObjToImport.Id))"
         } else 
         {
-            Import-NAVApplicationObjectFiles -files $ObjToImport.FileName.FileName -Server $Server -Database $Database -NavIde (Get-NAVIde) -LogFolder $LogFolder 
+            Import-NAVApplicationObjectFiles -files $ObjToImport.FileName.FileName -Server $Server -Database $Database -Password $Password -NavIde (Get-NAVIde) -LogFolder $LogFolder 
         }
         Invoke-PostImportCompilation -Object $ObjectToImport
     }
@@ -236,7 +239,7 @@ Process{
                 Write-Progress -Status "Processing $i of $count" -Activity 'Compiling objects...' -PercentComplete ($i / $count*100) -SecondsRemaining $remtime
             }
 
-            NVR_NAVScripts\Compile-NAVApplicationObject -Filter "Type=$($UpdatedObject.Type);Id=$($UpdatedObject.ID)" -Server $Server -Database $Database -NavIde (Get-NAVIde) -LogFolder $LogFolder
+            NVR_NAVScripts\Compile-NAVApplicationObject -Filter "Type=$($UpdatedObject.Type);Id=$($UpdatedObject.ID)" -Server $Server -Database $Database -Password $Password -NavIde (Get-NAVIde) -LogFolder $LogFolder
         }
         Write-Host -Object "Compiled $($UpdatedObjects.Count) objects..."
     }

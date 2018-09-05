@@ -68,6 +68,8 @@ new-navcontainer -accept_eula -containername $hostname -imageName $navImageNameT
 -doNotExportObjectsToText -enableSymbolLoading -Credential $dbcred -accept_outdated -databaseServer $dbcontainername -databaseName $dbname -databaseCredential $dbcred `
 -AdditionalParameters @($AddtionalParam) 
 
+docker exec $hostname powershell -command "C:\run\mvx\AdditionalMvComponents.ps1"
+docker exec $hostname powershell -command "C:\run\mvx\ChangeUidOffset.ps1 -UidOffSet $uidOffset -pass $password -DatabaseServer $dbcontainername -DatabaseName $dbname"
 
 $StopWatch.Stop();
 Write-Host -ForegroundColor Green "Finished. Total time for setup:" $StopWatch.Elapsed.ToString()

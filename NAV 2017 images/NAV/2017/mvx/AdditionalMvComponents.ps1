@@ -18,5 +18,7 @@ if(!$isRestarting){
 	if ($nExists) {
 	   Write-Host 'Creating AutoTest Company...'
 	   New-NAVCompany -ServerInstance NAV -CompanyName 'AutoTest'}
+    Copy-Item -Path "C:\Program Files\Microsoft Dynamics NAV\100\Service\Add-ins" -Destination "C:\Run\Program Files\100\RoleTailored Client\Add-ins" -Recurse -ErrorAction SilentlyContinue
+    New-Item -Path "C:\run\mvx\" -Name CompInstall.txt -ItemType File -Force
 }	
 

@@ -20,11 +20,11 @@ $dbPass = [regex]::Match($var,$passFormat)
 ##########
 $version = ''
 $tag = Get-NavContainerImageName -containerName $navContainerName
-[bool]$val = $tag -like '*2017*'
-if ($val) {$version = '2017'}
+[bool]$val = $tag -like '*2018*'
+if ($val) {$version = '2018'}
 ##########
 
-$command = "C:\run\mvx\Scripts2017\Update-NAVApplicationFromTxt.ps1 -Files C:\run\mvx\repo\NAV\ -Server $dbServer -Database $dbName -Password $dbPass -LogFolder C:\run\mvx\"
+$command = "C:\run\mvx\Scripts\Update-NAVApplicationFromTxt.ps1 -Files C:\run\mvx\repo\NAV\ -Server $dbServer -Database $dbName -Password $dbPass -LogFolder C:\run\mvx\"
 
 switch($true)
 {
