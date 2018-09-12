@@ -27,12 +27,16 @@ $password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr)
 
 if ($navImageNameTag -eq "") {
   $navImageNameTag ='mvxregistry/mv-dynamics-nav:latest'
-  switch($countryCode){
-		"" { $navImageNameTag += '.2018' }
-		"UKR" { $navImageNameTag += '.2018' }
-		"GR" { $navImageNameTag += '.2018' }
+  switch($countryCode)
+       {
+		""   { $navImageNameTag += '.2018'}
+		"UKR"{ $navImageNameTag += '.2018'}
+		"GR" { $navImageNameTag += '.2018'}
+	    "LV" { $navImageNameTag += '.2017cu11'}     
+		"BH" { $navImageNameTag += '.2017cu11'}		
 		}
 }
+
 
 $hostname = $containerName 
 if ($locale -eq "") {$locale = "nl-NL"}
@@ -42,6 +46,16 @@ $sStringToConvert = $sRawString -replace '\\', '\\'
 $Settings = convertfrom-stringdata $sStringToConvert  
 
 if($licenseFile -eq ""){$licenseFile = $Settings.licenseFile -replace '"', '' }                                                 
+if ($countryCode -eq "")
+  {$gitFolderCode = "MVX"} 
+else 
+  { $gitFolderCode = $countryCode }
+                                              
+if ($gitFolder -eq "")
+ {
+   $gitFolder = $Settings.gitFolder -replace '\$', $gitFolderCode
+ }
+
 
 $StopWatchDatabase = New-Object -TypeName System.Diagnostics.Stopwatch 
 $StopWatchDatabase.Start();
@@ -53,7 +67,6 @@ $dbname = [regex]::Match($logs,$dbNamePattern).Groups[2].Value
 
 $hostname = $containerName 
 docker logs $dbcontainername
-$hostname = $containerName 
 $nav = docker ps --format='{{.Names}}' -a --filter "name=$hostname"
 
 if($nav -eq $hostname){
@@ -61,15 +74,17 @@ if($nav -eq $hostname){
   Remove-Item -Path "C:\ProgramData\NavContainerHelper\Extensions\$hostname\" -Recurse -Force
 }
 
-$AddtionalParam = "--env locale=$locale --restart unless-stopped"
+$AddtionalParam = "--env locale=nl-NL --publish 587:587"
 if($gitFolder -ne '') {$AddtionalParam += " --volume $($gitFolder):C:\Run\mvx\Repo"}
 
-new-navcontainer -accept_eula -containername $hostname -imageName $navImageNameTag -auth NavUserPassword -includecside -updateHosts -licenseFile $licenseFile `
--doNotExportObjectsToText -enableSymbolLoading -Credential $dbcred -accept_outdated -databaseServer $dbcontainername -databaseName $dbname -databaseCredential $dbcred `
+new-navcontainer -accept_eula -accept_outdated -updateHosts -includecside -FileSharePort 21 -containername $hostname -imageName $navImageNameTag -auth NavUserPassword -licenseFile $licenseFile `
+-doNotExportObjectsToText -enableSymbolLoading -Credential $dbcred -databaseServer $dbcontainername -databaseName $dbname -databaseCredential $dbcred `
 -AdditionalParameters @($AddtionalParam) 
 
+
+$StopWatchMV = New-Object -TypeName System.Diagnostics.Stopwatch 
+$StopWatchMV.Start();
 docker exec $hostname powershell -command "C:\run\mvx\AdditionalMvComponents.ps1"
-docker exec $hostname powershell -command "C:\run\mvx\ChangeUidOffset.ps1 -UidOffSet $uidOffset -pass $password -DatabaseServer $dbcontainername -DatabaseName $dbname"
 
 $StopWatch.Stop();
 Write-Host -ForegroundColor Green "Finished. Total time for setup:" $StopWatch.Elapsed.ToString()

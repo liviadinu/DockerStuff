@@ -4,7 +4,7 @@ FROM microsoft/mssql-server-windows-express
  
 # create directory within SQL container for database files
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
-RUN Set-WinSystemLocale -SystemLocale lv-LV
+
 RUN mkdir 'C:\\SQLServer'
  
 #copy the database files from host to container

@@ -17,8 +17,11 @@ if(!$isRestarting){
 	[bool]$nExists = $var -eq ''
 	if ($nExists) {
 	   Write-Host 'Creating AutoTest Company...'
-	   New-NAVCompany -ServerInstance NAV -CompanyName 'AutoTest'}
-    Copy-Item -Path "C:\Program Files\Microsoft Dynamics NAV\100\Service\Add-ins" -Destination "C:\Run\Program Files\100\RoleTailored Client\Add-ins" -Recurse -ErrorAction SilentlyContinue
+	   New-NAVCompany -CompanyName AutoTest -ServerInstance NAV }
+   
+   	$source = "C:\Program Files\Microsoft Dynamics NAV\100\Service\Add-ins\"
+    $destination = "C:\navpfiles\100\RoleTailored Client\Add-ins\"
+    Get-ChildItem -Path  $source -Recurse | Copy-Item -Destination $destination -Container -ErrorAction SilentlyContinue
     New-Item -Path "C:\run\mvx\" -Name CompInstall.txt -ItemType File -Force
 }	
 

@@ -13,15 +13,6 @@ RUN Write-Host 'Installing LS Client Components' ;  Start-Process "lsclientcompo
 RUN del "lsservicecomponents.exe" ;  del "lsclientcomponents.exe" ;  del lsretail.inf
 ENV PATH_WITH_SPACE_CLIENT "C:\\Program Files (x86)\\Microsoft Dynamics NAV\\110\\RoleTailored Client\\Add-ins\\LSRetail\\DD"
 ENV PATH_WITH_SPACE_SERVICE "C:\\Program Files\\Microsoft Dynamics NAV\\110\\Service\\Add-ins\\LSRetail\\DD"
-RUN mkdir PATH_WITH_SPACE_CLIENT ; \
-    mkdir PATH_WITH_SPACE_SERVICE 
 COPY DD ${PATH_WITH_SPACE_CLIENT}
 COPY DD ${PATH_WITH_SPACE_SERVICE}
-RUN Copy-Item -Recurse -Verbose -ErrorAction SilentlyContinue '"C:\Run\mvx\DynamicsNAV2018ServerAddins"' -Destination ${PATH_WITH_SPACE_CLIENT} ; \
-	Copy-Item -Recurse -Verbose -ErrorAction SilentlyContinue '"C:\Run\mvx\DynamicsNAV2018ServerDLL"' -Destination ${PATH_WITH_SPACE_CLIENT}
-RUN Remove-Item '"C:\Run\mvx\DynamicsNAV2018ServerDLL"' -Force -Recurse -Verbose ; \ 
-	Remove-Item '"C:\Run\mvx\DynamicsNAV2018ServerAddins"' -Force -Recurse -Verbose 
-	
-	
-Copy-Item -Recurse -Verbose -ErrorAction SilentlyContinue "C:\Program Files\Microsoft Dynamics NAV\110\Service\" -Destination "C:\Run\Program Files\110\RoleTailored Client\"
-Copy-Item -Recurse -Verbose -ErrorAction SilentlyContinue "C:\Program Files\Microsoft Dynamics NAV\110\Service\Add-ins\" -Destination "C:\Run\Program Files\110\RoleTailored Client\Add-ins\"
+EXPOSE 587 21 25

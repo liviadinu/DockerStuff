@@ -1,0 +1,130 @@
+Installing Software Is Often Painful
+
+High-level issues:
+
+Will this even run on my operating system? 
+Is it cross-platform? 
+Does it support my OS, my OS version, and build number, does it support my CPU architecture? 
+How is the software packaged? 
+ - source code that we have to build on our own (Linux)
+ - standalone executable
+ - executable + depenencies (libraries, runtime, npm package, other installers etc)
+
+Installers can be double-edged sword:
+- what exactly did the installer do? 
+- What did it put on my computer? 
+- Uninstall or maybe to a new version --> always wonder if/what will it break on my machine
+
+NAV-specific issues
+
+-Manage different builds & platform versions on the same machine
+
+MV specific issues
+- Launching MV dev enviroments means piecing together some bits of software  
+     -> is often time-consuming
+- Version management of different depenencies, on top of NAV (LS, retailer-specific .dlls, etc)
+- Run retailer-specific enviroments in isolation (specific database - NAV -LS -Git branch) 
+     -> and easily switch between, or discard them to save resources
+	 -> partially solved with VMs
+- Always have proper data, configurations, codebase for working 
+(Do you have proper MV setups? What about retailer-specific setups?
+ Do you have enough data to test locally?
+ Do you run separate database per retailer? - be honest...
+ POS configs all good? 
+ Service Office & Central Unit companies? But do you have service products & time slots?
+ Are your web services even working? What about APIs? 
+ Are you running same NAV build as remote enviroments?
+ What about the git update powershell scripts? Both versions?)
+
+WHAT
+ 
+At he core of Docker is the notion
+of simplifying how we interact with software. 
+--> installing it, discovering it, starting it, stopping it, uninstalling it, even building it.
+
+HOW CAN IT HELP
+
+- Docker is the single entry-point to (most) of the software we might need
+- Docker Hub hosts an array of software images, including official Microsoft images for
+  -SQL Server
+  -IIS
+  -Dynamics NAV 
+  -Windows server core
+  
+ --> includes instruction to pull & run containers from the hosted images
+ --> helps versioning by using simple tags
+   So we have one site to worry about with regards to availability.
+ --> Docker simplifies the installation process : all dependencies are taken care of inside the image itself
+ --> More complex installations can be easily scripted for automation (demo)
+ --> Once applications are installed, they run in process isolation (more on that a bit later) : less worry about versioning
+ --> Inverted learning & reducing the time it takes you to get (back) to work : focus on coding
+
+SHORT INTRO
+
+DEFINITIONS
+
+Container host: The virtual or physical computer system that is configured using the related Windows Container feature.
+Container OS image: The general formula is that containers are always deployed using images. The container OS image is only the first layer in what could potentially be several image layers that make up the container. This particular image is the one that provides the complete specifications for the OS environment.
+Container image: The container image contains, embedded within itself, the base OS, the application, and all the application dependencies that are required to rapidly complete the deployment of a container.
+Container registry: All the container images are stored in a specific container registry and can be downloaded from there, whenever required or needed.
+Dockerfile: Dockerfiles are used in order to complete the automation of the process related to the creation of container images.
+
+DOCKER IMAGE
+
+DOCKER CONTAINER
+
+The dry definition:
+Containers constitute an OS virtualization and application-delivery technology that 
+provides you the ability to set up a resource-controlled, portable, and isolated operating environment. 
+
+Basically, they are a nice and clean way to get a reliable and guaranteed deployment, no matter the host system.
+ 
+The key difference between virtual machines and container technology :container technology allows a 
+ container host to use common shared resources for several containers, which are not fully self-contained.
+
+While containers can be an alternative to virtual machines, they're not about virtualization.
+Containers are really about running software. 
+
+What you need to remember:
+ -running containers = installing the application, configs & data
+ -stop/start containers = stop/start process
+ -remove container = uninstalling application, configs & data
+ -pull docker image = download installer
+ -remove docekr image = delete installer
+
+ISOLATION?
+  
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
