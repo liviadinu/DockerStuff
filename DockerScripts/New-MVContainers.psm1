@@ -54,7 +54,7 @@ if ($navImageNameTag -eq "") {
 $hostname = $containerName 
 if ($dbimage -eq "") {
     switch($countryCode){
-    ""    {$dbimage = 'mvxregistry/mvxsql:latest'}
+    ""    {$dbimage = 'mvxregistry/mvxsql:mv.latest'}
     "LT"  {$dbimage = 'mvxregistry/mvxsql:lt.latest'}
     "LV"  {$dbimage = 'mvxregistry/mvxsql:lv.latest'}
     "BH"  {$dbimage = 'mvxregistry/mvxsql:bh.latest'}
@@ -68,7 +68,7 @@ $StopWatchDatabase.Start();
 $var = docker ps --format='{{.Names}}' -a --filter "name=$dbcontainername"
 if ($var -eq $dbcontainername) { docker rm $dbcontainername --force }
 Write-Host -ForegroundColor Yellow "Creating Database container $dbcontainername..."
-docker run -d --hostname=$dbcontainername --memory 4G -e locale=$locale -e ACCEPT_EULA=Y -e sa_password=$password -v C:/temp/:C:/temp --name $dbcontainername $dbimage
+docker run -d --hostname=$dbcontainername --memory 3G -e locale=$locale -e ACCEPT_EULA=Y -e sa_password=$password -v C:/temp/:C:/temp --name $dbcontainername $dbimage
 
 $prevLog = ""
 Write-Host -ForegroundColor Yellow "Waiting for container $dbcontainername to be ready"
@@ -109,7 +109,7 @@ if($nav -eq $containerName){
     Remove-Item -Path "C:\ProgramData\NavContainerHelper\Extensions\$hostname\" -Recurse -Force
 }
 
-$AddtionalParam = "--env locale=nl-NL --publish 587:587"
+$AddtionalParam = "--env locale=nl-NL"
 if($gitFolder -ne '') {$AddtionalParam += " --volume $($gitFolder):C:\Run\mvx\Repo"}
 
 new-navcontainer -accept_eula -accept_outdated -updateHosts -includecside -FileSharePort 21 -containername $hostname -imageName $navImageNameTag -auth NavUserPassword -licenseFile $licenseFile `

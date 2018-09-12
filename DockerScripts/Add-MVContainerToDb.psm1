@@ -74,7 +74,7 @@ if($nav -eq $hostname){
   Remove-Item -Path "C:\ProgramData\NavContainerHelper\Extensions\$hostname\" -Recurse -Force
 }
 
-$AddtionalParam = "--env locale=nl-NL --publish 587:587"
+$AddtionalParam = "--env locale=nl-NL"
 if($gitFolder -ne '') {$AddtionalParam += " --volume $($gitFolder):C:\Run\mvx\Repo"}
 
 new-navcontainer -accept_eula -accept_outdated -updateHosts -includecside -FileSharePort 21 -containername $hostname -imageName $navImageNameTag -auth NavUserPassword -licenseFile $licenseFile `

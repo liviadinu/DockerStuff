@@ -17,12 +17,6 @@ $var = docker inspect --format='{{ .Config.Env}}' $dbServer
 $passFormat = '(?<=sa_password=).*?(?=\s)'
 $dbPass = [regex]::Match($var,$passFormat) 
 
-##########
-$version = ''
-$tag = Get-NavContainerImageName -containerName $navContainerName
-[bool]$val = $tag -like '*2018*'
-if ($val) {$version = '2018'}
-##########
 
 $command = "C:\run\mvx\Scripts\Update-NAVApplicationFromTxt.ps1 -Files C:\run\mvx\repo\NAV\ -Server $dbServer -Database $dbName -Password $dbPass -LogFolder C:\run\mvx\"
 
