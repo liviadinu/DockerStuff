@@ -17,7 +17,7 @@ $dbcontainername = $containerName + '-db'
 
 if ($countryCode -eq "")
      {
-	   $gitFolderCode = "MVX"
+	   $gitFolderCode = "MV"
 	 } 
 else { 
        $gitFolderCode = $countryCode 

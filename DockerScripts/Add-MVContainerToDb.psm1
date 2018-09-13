@@ -47,7 +47,7 @@ $Settings = convertfrom-stringdata $sStringToConvert
 
 if($licenseFile -eq ""){$licenseFile = $Settings.licenseFile -replace '"', '' }                                                 
 if ($countryCode -eq "")
-  {$gitFolderCode = "MVX"} 
+  {$gitFolderCode = "MV"} 
 else 
   { $gitFolderCode = $countryCode }
                                               
