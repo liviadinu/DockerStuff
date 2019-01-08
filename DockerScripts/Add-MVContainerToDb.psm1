@@ -26,7 +26,7 @@ $bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePass
 $password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr)
 
 if ($navImageNameTag -eq "") {
-  $navImageNameTag ='mvxregistry/mv-dynamics-nav:latest'
+  $navImageNameTag ='navapps/mv-dynamics-nav:latest'
   switch($countryCode)
        {
 		""   { $navImageNameTag += '.2018'}

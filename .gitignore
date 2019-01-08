@@ -1272,3 +1272,118 @@ NAV 2017 images/NAV/2017/mvx/LT/UPTEMV_1.1.4.2/UptComSrv2.dll
 NAV 2017 images/NAV/2017/mvx/LT/vilkasa/reg.bat
 NAV 2017 images/NAV/2017/mvx/LT/vilkasa/Vilkfis.dll
 DockerScripts/Setups.ini
+/CustomNAVImages/client.inf
+/CustomNAVImages/DD/DDConfigClient.dll
+/CustomNAVImages/DD/LSRetail.DD.Common.Data.dll
+/CustomNAVImages/DD/LSRetail.DD.Common.dll
+/CustomNAVImages/DD/TransAutomClient.dll
+/CustomNAVImages/K3VeriFoneSerialInterfaceDLL/K3VeriFoneSerialInterface.dll
+/CustomNAVImages/K3VeriFoneSerialInterfaceDLL/register_K3VeriFoneSerialInterface.cmd
+/CustomNAVImages/K3VeriFoneSerialInterfaceDLL/SerialInterface.dll
+/CustomNAVImages/K3VeriFoneSerialInterfaceDLL/SerialInterface.h
+/CustomNAVImages/K3VeriFoneSerialInterfaceDLL/SerialInterface.lib
+/CustomNAVImages/K3VeriFoneSerialInterfaceDLL/Unregister_K3VeriFoneSerialInterface.cmd
+/CustomNAVImages/lsclientcomponents.exe
+/CustomNAVImages/lskitchenclient.exe
+/CustomNAVImages/lskitchenserver.exe
+/CustomNAVImages/lsservicecomponents.exe
+/CustomNAVImages/mvx/AdditionalMvComponents.ps1
+/CustomNAVImages/mvx/ChangeUidOffset.ps1
+/CustomNAVImages/mvx/Dockerfile
+/CustomNAVImages/mvx/KitchenServiceClient/LSOne.DataLayer.BusinessObjects.dll
+/CustomNAVImages/mvx/KitchenServiceClient/LSOne.DataLayer.KDSBusinessObjects.dll
+/CustomNAVImages/mvx/KitchenServiceClient/LSOne.KitchenDisplaySystem.KdsClient.dll
+/CustomNAVImages/mvx/KitchenServiceClient/LSOne.KitchenDisplaySystem.KdsCommon.dll
+/CustomNAVImages/mvx/KitchenServiceClient/LSOne.Utilities.dll
+/CustomNAVImages/mvx/KitchenServiceClient/LSRetail.KClientNAV.dll
+/CustomNAVImages/mvx/Scripts/CommonPSFunctions/CommonPSFunctions.psd1
+/CustomNAVImages/mvx/Scripts/CommonPSFunctions/CommonPSFunctions.psm1
+/CustomNAVImages/mvx/Scripts/CommonPSFunctions/New-SymLink.ps1
+/CustomNAVImages/mvx/Scripts/Compile-NAVTxt2Fob.ps1
+/CustomNAVImages/mvx/Scripts/Export-NAVProfileCaptionML.ps1
+/CustomNAVImages/mvx/Scripts/Fix-NAVProfileTriggerNames.ps1
+/CustomNAVImages/mvx/Scripts/Get-NAVCumulativeUpdate.ps1
+/CustomNAVImages/mvx/Scripts/Get-NAVGITSetup.ps1
+/CustomNAVImages/mvx/Scripts/Install-Modules.ps1
+/CustomNAVImages/mvx/Scripts/Merge-NAVGIT.ps1
+/CustomNAVImages/mvx/Scripts/NVR_GitScripts/Commit-GitRepository.ps1
+/CustomNAVImages/mvx/Scripts/NVR_GitScripts/Get-GitBranch.ps1
+/CustomNAVImages/mvx/Scripts/NVR_GitScripts/loader.psm1
+/CustomNAVImages/mvx/Scripts/NVR_GitScripts/NVR_GitScripts.psd1
+/CustomNAVImages/mvx/Scripts/NVR_GitScripts/Update-GitRepository.ps1
+/CustomNAVImages/mvx/Scripts/NVR_NAVScripts/Compile-NAVTxt2Fob.ps1
+/CustomNAVImages/mvx/Scripts/NVR_NAVScripts/Expand-NAVCumulativeUpdateFile.ps1
+/CustomNAVImages/mvx/Scripts/NVR_NAVScripts/Export-NAVProfileCaptionML.ps1
+/CustomNAVImages/mvx/Scripts/NVR_NAVScripts/Fix-NAVProfileTriggerNames.ps1
+/CustomNAVImages/mvx/Scripts/NVR_NAVScripts/Get-NAVCumulativeUpdateFile.ps1
+/CustomNAVImages/mvx/Scripts/NVR_NAVScripts/Get-NAVGITSetup.ps1
+/CustomNAVImages/mvx/Scripts/NVR_NAVScripts/Merge-NAVGIT.ps1
+/CustomNAVImages/mvx/Scripts/NVR_NAVScripts/MSNAV80_CustomFunctions.ps1
+/CustomNAVImages/mvx/Scripts/NVR_NAVScripts/NVR_NAVScripts.psd1
+/CustomNAVImages/mvx/Scripts/NVR_NAVScripts/NVR_NAVScripts.psm1
+/CustomNAVImages/mvx/Scripts/NVR_NAVScripts/Publish-NAVObject.ps1
+/CustomNAVImages/mvx/Scripts/NVR_NAVScripts/Sync-NAVDbWithRepo.ps1
+/CustomNAVImages/mvx/Scripts/NVR_NAVScripts/Test-NAVDatabase.ps1
+/CustomNAVImages/mvx/Scripts/NVR_NAVScripts/Translate-NAVProfileCaptionML.ps1
+/CustomNAVImages/mvx/Scripts/NVR_NAVScripts/Update-NAVApplicationFromTxt.ps1
+/CustomNAVImages/mvx/Scripts/NVR_NAVScripts/Update-NAVServiceVersion.ps1
+/CustomNAVImages/mvx/Scripts/NVR_NAVScripts/Update-NAVTxtFromApplication.ps1
+/CustomNAVImages/mvx/Scripts/NVR_NAVScripts/Upgrade-NAVService.ps1
+/CustomNAVImages/mvx/Scripts/TFSBuild/Compile-NAVObjectsOnServer.ps1
+/CustomNAVImages/mvx/Scripts/TFSBuild/Compile-NAVObjectsOnServerRunner.ps1
+/CustomNAVImages/mvx/Scripts/TFSBuild/Export-NAVObjectsAsFOB.ps1
+/CustomNAVImages/mvx/Scripts/TFSBuild/Get-LastBuildFile.ps1
+/CustomNAVImages/mvx/Scripts/TFSBuild/Import-TxtFiles.ps1
+/CustomNAVImages/mvx/Scripts/TFSBuild/Import-TxtFilesAll.ps1
+/CustomNAVImages/mvx/Scripts/TFSBuild/New-NAVServer.ps1
+/CustomNAVImages/mvx/Scripts/TFSBuild/Remove-NAVServer.ps1
+/CustomNAVImages/mvx/Scripts/TFSBuild/Run-NAVTest.ps1
+/CustomNAVImages/mvx/Scripts/TFSBuild2015/Compile-NAVObjectsOnServer.ps1
+/CustomNAVImages/mvx/Scripts/TFSBuild2015/Compile-NAVObjectsOnServerRunner.ps1
+/CustomNAVImages/mvx/Scripts/TFSBuild2015/Export-NAVObjectsAsFOB.ps1
+/CustomNAVImages/mvx/Scripts/TFSBuild2015/Get-LastBuildFile.ps1
+/CustomNAVImages/mvx/Scripts/TFSBuild2015/Import-TxtFiles.ps1
+/CustomNAVImages/mvx/Scripts/TFSBuild2015/Import-TxtFilesAll.ps1
+/CustomNAVImages/mvx/Scripts/TFSBuild2015/New-NAVServer.ps1
+/CustomNAVImages/mvx/Scripts/TFSBuild2015/Remove-NAVServer.ps1
+/CustomNAVImages/mvx/Scripts/TFSBuild2015/Run-NAVTest.ps1
+/CustomNAVImages/mvx/Scripts/TFSBuild2015/Sync-TxtFiles.ps1
+/CustomNAVImages/mvx/Scripts/Translate-NAVProfileCaptionML.ps1
+/CustomNAVImages/mvx/Scripts/Update-NAVApplicationFromTxt.ps1
+/CustomNAVImages/mvx/Scripts/Update-NAVTxtFromApplication.ps1
+/CustomNAVImages/mvx/Scripts/Update-NAVTxtFromApplication2015.ps1
+/CustomNAVImages/mvx/webserver/webserver.js
+/CustomNAVImages/service.inf
+/DockerScripts/Setups.ini
+/LS11.05/Setup/LS Nav Toolbox/LS Nav 11.05.00.750 Client Components.exe
+/LS11.05/Setup/LS Nav Toolbox/LS Nav 11.05.00.750 Service Components.exe
+/NAV 2018 images/client.inf
+/NAV 2018 images/mvx/KitchenServiceClient/LSOne.DataLayer.BusinessObjects.dll
+/NAV 2018 images/mvx/KitchenServiceClient/LSOne.DataLayer.KDSBusinessObjects.dll
+/NAV 2018 images/mvx/KitchenServiceClient/LSOne.KitchenDisplaySystem.KdsClient.dll
+/NAV 2018 images/mvx/KitchenServiceClient/LSOne.KitchenDisplaySystem.KdsCommon.dll
+/NAV 2018 images/mvx/KitchenServiceClient/LSOne.Utilities.dll
+/NAV 2018 images/mvx/KitchenServiceClient/LSRetail.KClientNAV.dll
+/NAV 2018 images/service.inf
+/New folder/client.inf
+/New folder/DD/DDConfigClient.dll
+/New folder/DD/LSRetail.DD.Common.Data.dll
+/New folder/DD/LSRetail.DD.Common.dll
+/New folder/DD/TransAutomClient.dll
+/New folder/Dockerfile
+/New folder/kitchen.inf
+/New folder/lsclientcomponents.exe
+/New folder/lskitchenclient.exe
+/New folder/lskitchenserver.exe
+/New folder/lsservicecomponents.exe
+/New folder/machine.config
+/New folder/mvx/AdditionalMvComponents.ps1
+/New folder/mvx/ChangeUidOffset.ps1
+/New folder/mvx/KitchenServiceClient/LSOne.DataLayer.BusinessObjects.dll
+/New folder/mvx/KitchenServiceClient/LSOne.DataLayer.KDSBusinessObjects.dll
+/New folder/mvx/KitchenServiceClient/LSOne.KitchenDisplaySystem.KdsClient.dll
+/New folder/mvx/KitchenServiceClient/LSOne.KitchenDisplaySystem.KdsCommon.dll
+/New folder/mvx/KitchenServiceClient/LSOne.Utilities.dll
+/New folder/mvx/KitchenServiceClient/LSRetail.KClientNAV.dll
+/New folder/service.inf
+/OMA12 NAV2018.fob

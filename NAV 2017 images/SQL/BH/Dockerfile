@@ -8,10 +8,10 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 RUN mkdir 'C:\\SQLServer'
  
 #copy the database files from host to container
-COPY Bahrain2017_Data.mdf "C:\\SQLServer"
-COPY Bahrain2017_1_Data.ndf "C:\\SQLServer"
-COPY Bahrain2017_Log.ldf "C:\\SQLServer"
+COPY Bahrain2018_Data.mdf "C:\\SQLServer"
+COPY Bahrain2018_1_Data.ndf "C:\\SQLServer"
+COPY Bahrain2018_Log.ldf "C:\\SQLServer"
 
 ENV ACCEPT_EULA=Y
  
-ENV attach_dbs="[{'dbName':'Bahrain2017','dbFiles':['C:\\\\SQLServer\\\\Bahrain2017_Data.mdf','C:\\\\SQLServer\\\\Bahrain2017_1_Data.ndf','C:\\\\SQLServer\\\\Bahrain2017_Log.ldf']}]"
+ENV attach_dbs="[{'dbName':'Bahrain2018','dbFiles':['C:\\\\SQLServer\\\\Bahrain2018_Data.mdf','C:\\\\SQLServer\\\\Bahrain2018_1_Data.ndf','C:\\\\SQLServer\\\\Bahrain2018_Log.ldf']}]"

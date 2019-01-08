@@ -40,7 +40,7 @@ $bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePass
 $password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr)
 
 if ($navImageNameTag -eq "") {
-  $navImageNameTag ='mvxregistry/mv-dynamics-nav:latest'
+  $navImageNameTag ='navapps/mv-dynamics-nav:latest'
   switch($countryCode)
        {
 		""   { $navImageNameTag += '.2018'}
@@ -54,12 +54,12 @@ if ($navImageNameTag -eq "") {
 $hostname = $containerName 
 if ($dbimage -eq "") {
     switch($countryCode){
-    ""    {$dbimage = 'mvxregistry/mvxsql:mv.latest'}
-    "LT"  {$dbimage = 'mvxregistry/mvxsql:lt.latest'}
-    "LV"  {$dbimage = 'mvxregistry/mvxsql:lv.latest'}
-    "BH"  {$dbimage = 'mvxregistry/mvxsql:bh.latest'}
-	"GR"  {$dbimage = 'mvxregistry/mvxsql:gr.latest'}
-	"UKR" {$dbimage = 'mvxregistry/mvxsql:ukr.latest'}
+    ""    {$dbimage = 'navapps/mvxsql:mv.latest'}
+    "LT"  {$dbimage = 'navapps/mvxsql:lt.latest'}
+    "LV"  {$dbimage = 'navapps/mvxsql:lv.latest'}
+    "BH"  {$dbimage = 'navapps/mvxsql:bh.latest'}
+	"GR"  {$dbimage = 'navapps/mvxsql:gr.latest'}
+	"UKR" {$dbimage = 'navapps/mvxsql:ukr.latest'}
     }
 }
 
