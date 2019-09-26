@@ -1,0 +1,6 @@
+[Setup]
+Lang=default
+Dir=C:\Program Files (x86)\LS Retail\NAV
+Group=LS Retail\LS Nav
+NoIcons=0
+Tasks=nav110,start,dualdisplay,opos,fonts,hardwarestation
